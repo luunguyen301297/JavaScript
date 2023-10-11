@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM events</h1>
+    <h2>DOM events 1</h2>
+    <h2>DOM events 2</h2>
+    <h2>DOM events 3</h2>
+
+    <button onclick="myFunc()" id="click">Click me!</button>
+    <p id="demo"></p>
+
+    <select>
+        <option value="choosed value1">JavaScript</option>
+        <option value="choosed value2">PHP</option>
+        <option value="choosed value3">Ruby</option>
+    </select>
+    <p id="demo2"></p>
+    
+    <script>
+        //atribute events
+        let myFunc = () => {
+            document.getElementById('click').innerHTML = 'Clicked'
+            document.getElementById('demo').innerHTML = `you're clicked !`
+        }
+
+        //assign event tusing element node
+        let h1Element = document.querySelector('h1');
+        h1Element.onclick = () => {
+            h1Element.style.color = 'red'
+        }
+
+        let h2Elements = document.querySelectorAll('h2');
+        for (let i = 0; i <h2Elements.length; ++i) {
+            h2Elements[i].onclick = () => {
+                h2Elements[i].style.color = 'blue'
+            }
+        }
+
+        let selectElement = document.querySelector('select');
+        selectElement.onchange = (e) => {
+            let selectValue = e.target.value;
+            document.getElementById('demo2').innerHTML = selectValue;
+        }
+
+        //preventDefault
+        //stopPropagation
+    </script>
+</body>
+</html>

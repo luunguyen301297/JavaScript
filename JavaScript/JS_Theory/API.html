@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var callApi  = function(){
+      let response
+      let url = "https://b6b16988-158c-4b89-af32-95b60d3f7d70.mock.pstmn.io/demo"
+      let aApromise = fetch(url);
+      aApromise
+        .then(function (res) {  // callback
+          console.log("Ok ! Server return response")
+
+          if (!res.ok) { // call api success or not
+            throw new Error("Http error : " + res.status + " , error")  // return error
+          }
+          return res.json()
+        })
+
+        .then(function (body) {
+          response = body
+        })
+
+        .catch(function (error) {
+          console.log(err)
+        })
+        return response;
+    }
+    console.log(callApi())
+  </script>
+</body>
+</html>

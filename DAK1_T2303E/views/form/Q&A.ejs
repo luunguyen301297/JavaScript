@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div class="menu">
+      <ul class="nav nav-tabs" id="minitab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="Quiz1-tab" data-bs-toggle="tab" data-bs-target="#Quiz1" type="button" role="tab" aria-controls="Quiz1" aria-selected="true">Bảo hiểm ô tô bắt buộc (TNDS)</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="Quiz2-tab" data-bs-toggle="tab" data-bs-target="#Quiz2" type="button" role="tab" aria-controls="Quiz2" aria-selected="false">Bảo hiểm ô tô tự nguyện</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="Quiz3-tab" data-bs-toggle="tab" data-bs-target="#Quiz3" type="button" role="tab" aria-controls="Quiz3" aria-selected="false">Câu hỏi chung</button>
+        </li>
+      </ul>
+    </div>
+    <!-- tab content -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="Quiz1" role="tabpanel" aria-labelledby="Quiz1-tab">
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header">
+              <a class="" data-bs-toggle="collapse" href="#collapseOne">
+                <strong>Compulsory auto insurance to whom?</strong>
+                <i class="fa-solid fa-chevron-down"></i>
+              </a>
+            </div>
+            <div id="collapseOne" class="collapse " data-bs-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li>Compensation for the victim's property (3rd party) up to 100 million VND/case caused by the accident.</li>
+                  <li>Compensation for medical expenses and death for the victim (3rd party) up to 150 million VND/person/case caused by the accident.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed" data-bs-toggle="collapse" href="#collapseTwo">
+                <strong>How long is compulsory auto insurance valid? </strong>
+                <i class="fa-solid fa-chevron-down"></i>
+              </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+                <p>Insurance validity: 01 year from the effective date of the policy.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed" data-bs-toggle="collapse" href="#collapseThree">
+                <strong>How to use compulsory auto insurance (TNDS)? </strong>
+                <i class="fa-solid fa-chevron-down"></i>
+              </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li>Step 1: Check the situation – Call for help, give first aid and give first aid to the victim if necessary.</li>
+                  <li>Step 2: Contact the insurance company – Call the company's hotline for timely instructions.</li>
+                  <li>Step 3: Completing the dossier – Collecting documents and documents proving the damage.</li>
+                  <li>Step 4: Agree on the plan – The insurance company compensates the victim for damage, if any.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class=" collapsed " data-bs-toggle="collapse" href="#collapseFour">
+                <strong>If I don't carry the compulsory auto insurance certificate when participating in traffic, what should I do? </strong>
+                <i class="fa-solid fa-chevron-down"></i>
+              </a>
+            </div>
+            <div id="collapseFour" class="collapse " data-bs-parent="#accordion">
+              <div class="card-body">
+                <p>When participating in traffic, you must always carry the required certificate of auto insurance and present it when required. You will be fined from 400,000 – 600,000 VND if you cannot present the insurance certificate.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed " data-bs-toggle="collapse" href="#collapseFive">
+                <strong>How can I buy compulsory auto insurance for someone else? </strong>
+                <i class="fa-solid fa-chevron-down"></i>
+              </a>
+            </div>
+            <div id="collapseFive" class="collapse " data-bs-parent="#accordion">
+              <div class="card-body">
+                <p>You can buy compulsory auto insurance for someone else with that person's car information For example: When buying for Mr. Nguyen Van B, you will enter personal information and Mr. Nguyen Van B's car in the "INFORMATION ON VEHICLE REGISTRATION" section of the information input screen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

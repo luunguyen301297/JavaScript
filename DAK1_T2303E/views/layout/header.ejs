@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./css/header.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <!--button open and close nav mobile-->
+      <label for="nav_mobile_open" class="nav_btn">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+      <input type="checkbox" hidden name="" class="nav_open" id="nav_mobile_open" />
+      <label for="nav_mobile_open" class="nav_overlay"></label>
+      <!-- Nav Mobile MEnu -->
+      <div class="sidenav">
+        <label for="nav_mobile_open" class="nav_btn_close">
+          <i class="fa-solid fa-x"></i>
+        </label>
+        <div class="nav_mb_list">
+          <a href="ke-hoach-bao-hiem">Insurance Plan</a>
+          <button class="dropdown-btn">
+            Product
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="bao-hiem-o-to">Car Insurance</a>
+            <a href="bao-hiem-xe-may">Motocycle Insurance</a>
+            <a href="bao-hiem-xe-dau-keo">Tractor Truck</a>
+          </div>
+          <a href="ve-chung-toi">About Us</a>
+          <a href="lien-he">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Mobile Search -->
+      <label for="search_mb_open" class="nav_mobile_search">
+        <i class="fa-solid fa-magnifying-glass search_btn"></i>
+        <input type="checkbox" name="" hidden class="open_search" id="search_mb_open" />
+      </label>
+      <div class="mb_search">
+        <input type="text" name="" />
+      </div>
+
+      <div class="logo">
+        <a href="/">
+          <img src="./images/logo.png" alt="logo" />
+        </a>
+      </div>
+
+      <!-- Infor On Header -->
+      <div class="top_nav">
+        <div class="infor_nav">
+          <span class="in4"
+            ><a href="tel:12345679"><i class="fa-solid fa-phone"></i>12345679</a></span
+          >
+          <span class="in4"><i class="fa-solid fa-location-dot"></i>Số 8 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
+        </div>
+        <div class="social_nav">
+          <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav PC -->
+      <nav class="nav_pc navbar-nav">
+        <ul class="nav_list">
+          <li class="dropdown nav-item">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Product</button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li class="drop_form">
+                <ul class="item_area_1">
+                  <a class="item_header" href="bao-hiem-o-to">Car Insurance</a>
+                  <a class="item_child" href="/bao-hiem-o-to-tnds"><li>TNDS Insurance</li></a>
+                  <a class="item_child" href="/bao-hiem-o-to-tncn"><li>Accident Insurance</li></a>
+                  <a class="item_child" href="/bao-hiem-o-to-thvc"><li>Material Insurance</li></a>
+                  <a class="item_child" href="/bao-hiem-o-to-hhvc"><li>Merchandise Insurance</li></a>
+                </ul>
+
+                <ul class="item_area_2">
+                  <a class="item_header" href="bao-hiem-xe-may">Motorbike Insurance</a>
+                  <a class="item_child" href="/bao-hiem-xe-may-tnds"><li>TNDS Insurance</li></a>
+                  <a class="item_child" href="/bao-hiem-xe-may-tnds"><li>TNDS Voluntary Insurance</li></a>
+                  <a class="item_child" href="/bao-hiem-xe-may-tncn"><li>Accident Insurance</li></a>
+                  <a class="item_child" href="/bao-hiem-xe-may-bhvc"><li>Material Insurance</li></a>
+                </ul>
+
+                <ul class="item_area_3">
+                  <a class="item_header" href="bao-hiem-xe-dau-keo">Truck Insurance</a>
+                  <a class="item_child" href="/bao-hiem-xe-dk-tnds"><li>TNDS Insurance</li></a>
+                  <a class="item_child" href="/bao-hiem-xe-dk-tnds"><li>TNDS Voluntary Insurance</li></a>
+                  <a class="item_child" href="/bao-hiem-xe-dk-tncn"><li>Accident Insurance</li></a>
+                  <a class="item_child" href="/bao-hiem-xe-dk-hhvc"><li>Merchandise Insurance</li></a>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="/ke-hoach-bao-hiem" class="nav_link">Insurance Plan</a>
+          </li>
+          <li class="nav-item">
+            <a href="/ve-chung-toi" class="nav_link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="/lien-he" class="nav_link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- PC Search -->
+      <form action="/tim-kiem" method="get" role="form">
+        <div class="search">
+          <button type="submit" class="search_icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input type="search" name="q" placeholder="Search..." />
+        </div>
+      </form>
+    </div>
+
+    <script src="./js/header.js"></script>
+  </body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <%- include ('./layout/head.ejs') -%>
+</head>
+
+<body>
+  <%- include ('./layout/header.ejs') -%>
+
+    <div class="container_contact">
+      <div class="top_contact">
+        <div class="top_contact_title">
+          <h4>Contact Us</h4>
+        </div>
+        <div class="infor_container">
+          <div class="contact_infor">
+            <a href="mailto:examples@email.com">
+              <span class="contact_icons">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <p class="contact_content">examples@email.com</p>
+            </a>
+          </div>
+          <div class="contact_infor">
+            <a href="tel:+123456789">
+              <span class="contact_icons">
+                <i class="fa-solid fa-phone"></i>
+              </span>
+              <p class="contact_content">+123456789</p>
+            </a>
+          </div>
+          <div class="contact_infor">
+            <span class="contact_icons">
+              <i class="fa-solid fa-location-dot"></i>
+            </span>
+            <p class="contact_content">Số 8A Tôn Thất Thuyết, Mỹ Đình, Nam Từ Liêm, Hà Nội, Việt Nam</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom_product_page">
+        <div class="product_page_form">
+          <div class="form_title">
+            <h4>Leave Information For The Soonest Advice</h4>
+          </div>
+          <div class="product_form">
+            <form class="form_content">
+              <div class="top_form">
+                <div class="name_reg product_reg">
+                  <span>
+                    <i class="fa-solid fa-user-tag"></i>
+                  </span>
+                  <input type="text" name="userName" id="name" placeholder="Name" />
+                </div>
+                <div class="phone_reg product_reg">
+                  <span>
+                    <i class="fa-solid fa-address-card"></i>
+                  </span>
+                  <input type="tel" name="userPhoneNumber" id="phoneNumber" placeholder="Phone" />
+                </div>
+                <div class="email_reg product_reg">
+                  <span>
+                    <i class="fa-solid fa-at"></i>
+                  </span>
+                  <input type="email" name="userEmail" id="email" placeholder="Email" />
+                </div>
+                <div class="address_reg product_reg">
+                  <span>
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </span>
+                  <input type="text" name="userAddress" id="address" placeholder="Address" />
+                </div>
+              </div>
+
+              <div class="message_form">
+                <textarea rows="7" id="message" name="userMessage" cols="100"
+                  placeholder="Leave your questions here..."></textarea>
+              </div>
+
+              <div class="bottom_form">
+                <div class="agree">
+                  <div class="check_agree">
+                    <input type="checkbox" name="check_agree" />
+                  </div>
+                  <div class="agree_content">
+                    <p>I agree to Safe Caz's terms of service</p>
+                  </div>
+                </div>
+                <div class="btn_submit">
+                  <button type="submit" id="button_submit">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="alert_message">
+          <p id="message" class="alert alert-success"></p>
+        </div>
+      </div>
+
+      <div class="bottom_contact">
+        <div class="map_location">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d958.3071864668017!2d105.78289086605814!3d21.028556731106733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab86cece9ac1%3A0xa9bc04e04602dd85!2zRlBUIEFwdGVjaCBIw6AgTuG7mWkgLSBI4buHIFRo4buRbmcgxJDDoG8gVOG6oW8gTOG6rXAgVHLDrG5oIFZpw6puIFF14buRYyBU4bq_IChTaW5jZSAxOTk5KQ!5e0!3m2!1svi!2s!4v1688179235674!5m2!1svi!2s"
+            id="map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <%- include ('./layout/footer.ejs') -%>
+</body>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .top_contact {
+    position: relative;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), #0000009f), url('images/contact/background-contact.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    color: #fff;
+  }
+
+  .top_contact_title {
+    position: absolute;
+    top: 35%;
+    width: 90%;
+    text-align: center;
+    z-index: 99;
+    margin: 0 5%;
+  }
+
+  .top_contact_title h4 {
+    font-size: 3.2em;
+  }
+
+  .infor_container {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 90%;
+    z-index: 99;
+    font-size: 1.6em;
+  }
+
+  .contact_infor {
+    width: 33.33333%;
+  }
+
+  .contact_infor a {
+    color: #fff;
+  }
+
+  .contact_icons,
+  .contact_content {
+    text-shadow: 4px 4px 4px #000501e3;
+  }
+
+  /* contact form style */
+  .bottom_product_page {
+    background: #fafafa;
+    width: 100%;
+    height: 600px;
+    position: relative;
+  }
+
+  .product_page_form {
+    width: 80%;
+    height: 85%;
+    position: absolute;
+    top: 0;
+    left: 10%;
+  }
+
+  .top_form {
+    position: relative;
+    height: 47.5%;
+    width: 100%;
+  }
+
+  .product_form {
+    height: 85%;
+    width: 100%;
+    position: relative;
+    top: 5%;
+  }
+
+  .form_content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .form_title {
+    position: relative;
+    top: 5%;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form_title h4 {
+    height: 100%;
+    width: auto;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    color: #263F65;
+  }
+
+  .product_reg {
+    position: absolute;
+    width: 45%;
+    height: 30%;
+  }
+
+  .product_reg span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(94, 94, 94, 0.934);
+  }
+
+  .product_reg input {
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    border: none;
+    border-bottom: 1px solid rgba(94, 94, 94, 0.934);
+    outline: none;
+    background-color: #fafafa;
+  }
+
+  .name_reg {
+    position: absolute;
+    top: 15%;
+    left: 0;
+  }
+
+  .phone_reg {
+    top: 15%;
+    position: absolute;
+    right: 0;
+  }
+
+  .email_reg {
+    position: absolute;
+    bottom: 15%;
+    right: 0;
+  }
+
+  .address_reg {
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+  }
+
+  .error {
+    color: red;
+  }
+
+  .message_form {
+    padding-top: 20px;
+    position: relative;
+    width: 100%;
+    height: 42%;
+  }
+
+  .message_form textarea {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    border-radius: 8px;
+    background-color: #FAFAFA;
+
+  }
+
+  .bottom_form {
+    bottom: -10%;
+    height: 15%;
+    position: relative;
+    width: 100%;
+  }
+
+  .agree {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.4em;
+    height: 100%;
+    width: 70%;
+  }
+
+  .agree .check_agree {
+    height: 100%;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .check_agree input {
+    height: 40%;
+    width: 40%;
+  }
+
+  .agree_content {
+    display: flex;
+    height: 100%;
+    width: auto;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .agree_content p {
+    color: rgba(78, 78, 78, 0.934);
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 15px;
+  }
+
+  .btn_submit {
+    position: absolute;
+    right: 0;
+    height:85%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .btn_submit button {
+    height: 80%;
+    width: 60%;
+    position: relative;
+    right: 8%;
+    border: none;
+    border-radius: 6px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: #1b6774;
+    color: #fff;
+  }
+
+  .alert_message {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    height: 10%;
+    left: 10%;
+    display: none;
+  }
+
+  .alert_message p {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+    text-align: center;
+  }
+
+  /* map location style */
+  .bottom_contact {
+    padding: 50px 0;
+    width: 100%;
+    height: 600px;
+    background-color: #FAFAFA;
+  }
+
+  .map_location {
+    width: 80%;
+    height: 96%;
+    margin: 2% 10% 2% 10%;
+    text-align: center;
+  }
+
+  .map_location iframe {
+    width: 80%;
+    height: 100%;
+  }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+  integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  $(document).ready(function () {
+    $(".nav_item_1").on("click", function () {
+      $(".nav_item_1").addClass("nav_active nav_item_1");
+      $(".nav_item_2, .nav_item_3").removeClass("nav_active nav_pro_items");
+
+      $(".content_1").addClass("content_show").removeClass("content_hidden");
+      $(".content_2, .content_3").addClass("content_hidden").removeClass("content_show");
+    });
+
+    $(".nav_item_2").on("click", function () {
+      $(".nav_item_2").addClass("nav_active nav_item_2");
+      $(".nav_item_1, .nav_item_3").removeClass("nav_active nav_pro_items");
+
+      $(".content_2").addClass("content_show").removeClass("content_hidden");
+      $(".content_1, .content_3").addClass("content_hidden").removeClass("content_show");
+    });
+
+    $(".nav_item_3").on("click", function () {
+      $(".nav_item_3").addClass("nav_active nav_item_3");
+      $(".nav_item_1, .nav_item_2").removeClass("nav_active nav_pro_items");
+
+      $(".content_3").addClass("content_show").removeClass("content_hidden");
+      $(".content_1, .content_2").addClass("content_hidden").removeClass("content_show");
+    });
+
+    $("#button_submit").prop("disabled", true);
+    $("input[name=check_agree]").click(() => {
+      $("#button_submit").prop("disabled", !$("input[name=check_agree]").prop("checked"));
+    });
+
+    $(".form_content").validate({
+      onfocusout: false,
+      onkeyup: false,
+      onclick: false,
+      rules: {
+        userName: {
+          required: true,
+        },
+        userPhoneNumber: {
+          required: true,
+          maxlength: 15,
+        },
+        userEmail: {
+          required: true,
+        },
+        userAddress: {
+          required: true,
+        },
+        userMessage: {
+          required: true,
+        },
+      },
+      messages: {
+        userName: {
+          required: "Vui lòng nhập họ và tên",
+        },
+        userPhoneNumber: {
+          required: "Bắt buộc nhập số điện thoại",
+          minlength: "Vui lòng nhập số điện thoại hợp lệ",
+        },
+        userEmail: {
+          required: "Vui lòng nhập email",
+        },
+        userAddress: {
+          required: "Vui lòng nhập địa chỉ",
+        },
+        userMessage: {
+          required: "Vui lòng để lại lời nhắn cho chúng tôi",
+        },
+      },
+    });
+
+    $("#button_submit").on("click", function (event) {
+      event.preventDefault();
+      $(".form_content").valid();
+      if ($(".form_content").valid()) {
+        let name = $("#name");
+        let phoneNumber = $("#phoneNumber");
+        let email = $("#email");
+        let address = $("#address");
+        let message = $("#message");
+        let req = new XMLHttpRequest();
+
+        req.open("POST", "/dang-ky");
+        req.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        req.send("userName=" + name.val() + "&userPhoneNumber=" + phoneNumber.val() + "&userEmail=" + email.val() + "&userAddress=" + address.val());
+
+        req.onreadystatechange = () => {
+          if (req.readyState == 4 && req.status == 200 && $(".form_content").valid()) {
+            $("#alert_message").text(req.responseText);
+            $(".alert_message").show();
+            name.val("");
+            phoneNumber.val("");
+            email.val("");
+            address.val("");
+            message.val("");
+          }
+        };
+      } else {
+        $(".alert_message").hide();
+      }
+    });
+
+    $("input").on("input", () => {
+      $("input").css("color", "black").removeClass("error");
+      $("textarea").css("color", "black").removeClass("error");
+      $(".error").css("display", "none");
+    });
+  });
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="image">
+      <img id="image" src="https://p.turbosquid.com/ts-thumb/Ty/E3ZDe0/2BOTAea6/t72mainbattletankcamo3dmodel000/jpg/1491462235/300x300/sharp_fit_q85/ca258272e473634a9a0ec1f4bdeeaf72d9a69600/t72mainbattletankcamo3dmodel000.jpg" />
+    </div>
+
+    <script>
+      document.getElementById("image").onclick = () => changeImage();
+      let i = 1;
+
+      changeImage = () => {
+        let imgs = ["https://p.turbosquid.com/ts-thumb/Ty/E3ZDe0/2BOTAea6/t72mainbattletankcamo3dmodel000/jpg/1491462235/300x300/sharp_fit_q85/ca258272e473634a9a0ec1f4bdeeaf72d9a69600/t72mainbattletankcamo3dmodel000.jpg", "https://p.turbosquid.com/ts-thumb/o1/3CKubj/H3/m1a_ts/jpg/1673134731/1920x1080/fit_q87/6058d5e63ef3aeb50cb5e7561c435248a68e008d/m1a_ts.jpg", "https://images.pond5.com/altay-turkish-main-battle-tank-3d-089228643_iconl.jpeg", "https://images.pond5.com/arjun-india-main-battle-tank-3d-089286562_iconl.jpeg"];
+        document.getElementById("image").src = imgs[i];
+        i++;
+        if (i == 4) {
+          i = 0;
+        }
+      };
+      setInterval(changeImage, 2500);
+    </script>
+
+    <style>
+      .image {
+        text-align: center;
+      }
+      #image {
+        width: 300px;
+      }
+    </style>
+  </body>
+</html>

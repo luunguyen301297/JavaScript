@@ -1,0 +1,23 @@
+.text{
+  margin: 0 10%;
+  padding-top: 120px;
+  padding-bottom: 20px;
+}
+.text h1{
+   text-align: center;
+   color: #263F65;
+}
+.input[type=text]{
+   color: rgba(78, 78, 78, 0.934);
+}
+.input[type=email]{
+   color: rgba(78, 78, 78, 0.934);
+}
+.btn{
+overflow: visible;
+background-color: #2CAAC1;
+color: #fff;
+}
+h1,pixel{
+padding: 5%;
+}

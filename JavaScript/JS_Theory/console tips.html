@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const man1 = {name: 'A', age: 18}
+    const man2 = {name: 'B', age: 19}
+    const man3 = {name: 'C', age: 20}
+
+    //quản lý khi có nhiều object
+    console.log({man1, man2, man3})
+    console.table([man1, man2, man3])
+
+    //đếm thời gian chạy
+    console.time('>>>timer')
+    for(let i = 0; i < 1000; i++) {}
+    console.timeEnd('>>>timer')
+
+    //stack strace
+    const test = () => {
+      console.trace('>>>test trace')
+    }
+    test();
+
+    //!! tip chuyển đổi mọi kiểu dữ liệu sang boolean
+    console.log(!!'Hello')
+  </script>
+</body>
+</html>

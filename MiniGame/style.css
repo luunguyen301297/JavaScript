@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  overflow: hidden;
+}
+
+.mainbox {
+  position: relative;
+  width: 500px;
+  height: 450px;
+  margin: 50px auto;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  width: 124px;
+}
+
+.box img {
+  width: 120px;
+}
+
+.reward-active {
+  border: 2px solid #FFBA0D;
+  border-radius: 10px;
+}
+
+.box-center {
+  display: flex;
+}
+
+.spin img {
+  position: absolute;
+  top: 40%;
+  left: 43%;
+  width: 160px;
+  cursor: pointer;
+}
+
+.spin img:active {
+  padding: 2px;
+  font-size: 20px;
+  filter: brightness(1.05);
+}
+
+audio {
+  display: none;
+}

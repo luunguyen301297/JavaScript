@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <%- include ('./layout/head.ejs') -%>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+
+  <body>
+    <%- include ('./layout/header.ejs') -%>
+
+    <!-- =======================Slider======================= -->
+    <section class="banner_slider">
+      <div class="slide">
+        <div class="slide_content">
+          <h2>Comprehensive asset protection</h2>
+          <p>
+            In Vietnam, there are millions of vehicles on the road every day, and collisions are sometimes unavoidable.<br />
+            Let us help you enjoy driving without worrying about unexpected troubles that may occur on the road.
+          </p>
+          <div class="button_wrap">
+            <a onclick="scrollWin()" class="btn btn_transparent">Start Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide slide_two">
+        <div class="slide_content">
+          <h2>Insurance Planning</h2>
+          <p>
+            Our plans are built around you.<br />
+            Our team of advisors are trained to provide advice that best suits your needs.
+          </p>
+          <div class="button_wrap">
+            <a href="ke-hoach-bao-hiem" class="btn btn_transparent">Start Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide slide_three">
+        <div class="slide_content">
+          <h2>Experience the SAFECAZ application on the mobile</h2>
+          <p>
+            Easy to manage on mobile with SAFECAZ application.<br />
+            With just one touch, convenient, and safe!
+          </p>
+          <div class="button_wrap">
+            <a href="#" class="btn btn_transparent">Start Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================Company list======================= -->
+
+    <section class="company">
+      <div class="sideline">Our Partner Companies</div>
+
+      <div class="company_item">
+        <a href="https://hanwhalife.com.vn/vi"><img src="../images/company-1.png" /></a>
+        <a href="https://hanwhalife.com.vn/vi"><img src="../images/company-2.jpg" /></a>
+        <a href="https://hanwhalife.com.vn/vi"><img src="../images/company-3.jpg" /></a>
+        <a href="https://hanwhalife.com.vn/vi"><img src="../images/company-4.jpg" /></a>
+      </div>
+    </section>
+
+    <!-- =======================Car insurance======================= -->
+    <div class="insurance_header">
+      <h2>Car Insurance</h2>
+      <p>Happiness on every journey</p>
+      <p>Safe in every trip</p>
+    </div>
+
+    <div class="owl-carousel owl-theme">
+      <% for ( let [index, p] of product.entries()) { %>
+      <div class="item" style="background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0), #000000cd), url(../images/card-<%= p.id %>.jpg);">
+        <div class="item-txt">
+          <h4 class="item-header"><%= p.name %></h4>
+          <p><%= p.content %></p>
+          <a href="<%= p.slug %>" class="item-btn">View More</a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+
+    <!-- =======================Motor insurance======================= -->
+    <div class="vehicle-insurance">
+      <div class="vehicle-header">
+        <h2>Motorcyrcle Insurance</h2>
+        <p>Buying a car can be the second most expensive investment in a person's life after a house.</p>
+        <p>So it's important to protect that investment against unforeseen events.</p>
+      </div>
+
+      <div class="vehicle-list">
+        <div class="vehicle-item vehicle-1">
+          <h2>TNDS Insurance</h2>
+          <a href="/bao-hiem-xe-may-tnds"><i class="bi bi-arrow-right-circle"></i></a>
+        </div>
+
+        <div class="vehicle-item vehicle-2">
+          <h2>Accident Insurance</h2>
+          <a href="bao-hiem-xe-may-tncn"><i class="bi bi-arrow-right-circle"></i></a>
+        </div>
+
+        <div class="vehicle-item vehicle-3">
+          <h2>Material Insurance</h2>
+          <a href="bao-hiem-xe-may-bhvc"><i class="bi bi-arrow-right-circle"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================Insurance plan======================= -->
+    <div class="insurance-plan">
+      <div class="plan-img"></div>
+
+      <div class="plan-header">
+        <h2>Insurance Planning</h2>
+        <p>
+          When mishaps happen, smart people have a pre-prepared plan, ordinary people don't.<br />
+          <br />Vehicle insurance is available as stand-alone products. So you should consider which of them you need.
+        </p>
+        <a href="#" class="plan-btn">Start Now <i class="fa fa-circle-chevron-right"></i></a>
+      </div>
+    </div>
+
+    <!-- =======================advertisement======================= -->
+    <div class="advertisement">
+      <div class="grid-header">
+        <b>Best for you</b>
+        <h2>Why Choose SAFECAZ ?</h2>
+        <p>
+          Your investment assets are major expenses that should be protected at all costs.<br />
+          Having a comprehensive insurance plan will help you relax and enjoy your work. <br /><br />Leave risk management to our experts in the event of a disaster.
+        </p>
+        <div class="grid-btn">
+          <a href="#" class="btn-1">View More <i class="fa fa-circle-chevron-right"></i></a>
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item grid-1">
+          <i class="bi bi-shield-check"></i>
+          <h4>Certified Platform</h4>
+          <p>SAFECAZ is trusted by millions of people like you, and backed by leading companies in Vietnam</p>
+        </div>
+
+        <div class="grid-item grid-2">
+          <i class="bi bi-headset"></i>
+          <h4>Service 24/7</h4>
+          <p>Choosing insurance isn't a chore. That's why we have team of advisors trained to help you</p>
+        </div>
+
+        <div class="grid-item grid-3">
+          <i class="bi bi-briefcase"></i>
+          <h4>3+ Weeks of Experience</h4>
+          <p>With over 3 weeks of experience, we exist to make your world, and the world, a better place</p>
+        </div>
+
+        <div class="grid-item grid-4">
+          <i class="bi bi-coin"></i>
+          <h4>High Value, Low Cost</h4>
+          <p>The claim will be processed within 48 hours, as long as we have all the information we need</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================Google Play======================= -->
+    <div class="gg-app">
+      <img class="gg-img" src="../images/ggplay.jpg" />
+      <div class="app-content">
+        <div class="app-header">
+          <h2>Download App</h2>
+          <p>Join millions of others to protect your wealth and health every day</p>
+        </div>
+        <div class="app-btn">
+          <a href="#"><img src="../images/ggapp-1.png" /></a>
+          <a href="#"><img src="../images/ggapp-2.png" /></a>
+        </div>
+      </div>
+    </div>
+
+    <%- include ('./layout/footer.ejs') -%>
+
+    <script src="/js/home.js"></script>
+  </body>
+</html>

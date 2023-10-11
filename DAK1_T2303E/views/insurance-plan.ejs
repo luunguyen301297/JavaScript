@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insurance Plan</title>
+  <%- include ('./layout/head.ejs') -%>
+    <link rel="stylesheet" href="/css/car-insurance.css" />
+</head>
+
+<body>
+  <%- include ('./layout/header.ejs') -%>
+
+    <div style="height: 100px;"></div>
+    <div class="vehicle-panel">
+      <div class="panel-img">
+        <img src="../images/slider-2.jpg" />
+      </div>
+
+      <div class="panel-header">
+        <h2>Purchase Car Insurance on Safe Caz</h2>
+        <p><i class="fa-solid fa-circle-check"></i> Best Premiums</p>
+        <p><i class="fa-solid fa-circle-check"></i> Quick Purchase and Grant of Contracts</p>
+        <p><i class="fa-solid fa-circle-check"></i> Submit claim on website</p>
+        <p><i class="fa-solid fa-circle-check"></i> Easy management on mobile</p>
+      </div>
+    </div>
+
+    <div class="insurance-plan">
+      <div class="plan-1">
+        <h2>Vehicle insurance</h2>
+        <p>Save time, money, and hassle by purchasing additional insurance policies in addition to <a
+            href="/bao-hiem-o-to-tnds">TNDS Insurance</p>
+        </a>
+      </div>
+
+      <div class="plan-2">
+        <h4>Average savings</h4>
+        <h1><i class="fa-solid fa-dollar-sign"></i>1,073</h1>
+        <b>Per year for<br />a comprehensive insurance plan</b>
+      </div>
+    </div>
+
+    <div class="product_page_content">
+      <h2>Choose the insurance package you need</h2>
+
+      <div class="nav_product_page">
+        <div class="nav_format" style="background-color: rgb(241, 241, 241);">
+          <div class="nav_item_1 nav_product_item nav_active">
+            <h4>Car Insurance Plan</h4>
+          </div>
+          <div class="nav_item_2 nav_product_item">
+            <h4>Motorbike Insurance Plan</h4>
+          </div>
+          <div class="nav_item_3 nav_product_item">
+            <h4>Truck Insurance Plan</h4>
+          </div>
+        </div>
+      </div>
+      <div class="view_content">
+        <div class="content_1 content_show">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault" value="Car TNDS Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Car TNDS Insurance
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault" value="Car Accident Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Car Accident Insurance
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault" value="Car Material Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Car Material Insurance
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault" value="Car Merchandise Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Car Merchandise Insurance
+            </label>
+          </div>
+
+          <select class="form-select" id="option_value" aria-label="Default select example">
+            <option selected>Please choose a supplier</option>
+            <option value="1">Hanwha</option>
+            <option value="2">Manulife</option>
+          </select>
+
+          <div class="alert alert-danger">Please choose at least one insurance plan</div>
+
+          <div class="alert alert-success">Save the information successfully, we will contact you in the shortest time</div>
+
+          <button type="submit" class="btn plan_btn" onclick="radioValue()">Submit</button>
+        </div>
+
+        <div class="content_2 content_hidden">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault" value="Motorbike TNDS Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Motorbike TNDS Insurance
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault" value="Motorbike Voluntary Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Motorbike Voluntary Insurance
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault" value="Motorbike Accident Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Motorbike Accident Insurance
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault" value="Motorbike Material Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Motorbike Material Insurance
+            </label>
+          </div>
+
+          <select class="form-select" id="option_value" aria-label="Default select example">
+            <option selected>Please choose a supplier</option>
+            <option value="1">Liberty</option>
+            <option value="2">AIA</option>
+          </select>
+
+          <div class="alert alert-danger">Please choose at least one insurance plan</div>
+
+          <div class="alert alert-success">Save the information successfully, we will contact you in the shortest time</div>
+
+          <button type="submit" class="btn plan_btn" onclick="radioValue()">Submit</button>
+        </div>
+
+        <div class="content_3 content_hidden">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault" value="Tractor Truck TNDS Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Tractor Truck TNDS Insurance
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault"
+              value="Tractor Truck Voluntary Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Tractor Truck Voluntary Insurance
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault" value="Tractor Truck Accident Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Tractor Truck Accident Insurance
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault"
+              value="Tractor Truck Merchandise Insurance">
+            <label class="form-check-label" for="flexRadioDefault">
+              Tractor Truck Merchandise Insurance
+            </label>
+          </div>
+
+          <select class="form-select" id="option_value" aria-label="Default select example">
+            <option selected>Please choose a supplier</option>
+            <option value="1">Liberty</option>
+            <option value="2">AIA</option>
+          </select>
+
+          <div class="alert alert-danger">Please choose at least one insurance plan</div>
+
+          <div class="alert alert-success">Save the information successfully, we will contact you in the shortest time</div>
+
+          <button type="submit" class="btn plan_btn" onclick="radioValue()">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h2>Frequently asked questions</h2>
+
+      <div><%- include ('./form/Q&A.ejs') -%></div>
+    </div>
+
+    <div><%- include ('./form/dktv.ejs') -%></div>
+
+    <div class="company">
+      <div class="sideline">Partner for Vehicle Insurance</div>
+      <div class="company_item">
+        <a href="https://baohiem-liberty.com.vn/"><img src="../images/company-3.jpg" /></a>
+        <a href="http://pvibaohiemsh.com/"><img src="../images/company-4.jpg" /></a>
+      </div>
+    </div>
+
+    <%- include ('./layout/footer.ejs') -%>
+
+      <script src="/js/car-insurance.js"></script>
+</body>
+
+<style>
+  /* content style */
+  .product_page_content h2 {
+    text-align: center;
+    padding-top: 60px;
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #0a363f;
+  }
+
+  .product_page_content {
+    width: 100%;
+    height: 500px;
+    position: relative;
+  }
+
+  .nav_product_page {
+    display: flex;
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 30%;
+    height: 13%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav_format {
+    display: flex;
+    width: 100%;
+    height: 70%;
+    border-bottom: 3px solid #0d4955;
+    background: #fff 0 0 no-repeat padding-box;
+    position: relative;
+  }
+
+  .nav_product_item {
+    width: 33.33333%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  ol.hd {
+    list-style-type: decimal;
+  }
+
+  .nav_active {
+    color: #fff;
+    background-color: #0d4955;
+  }
+
+  .nav_active::after,
+  .nav_active::after,
+  .nav_active::after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 100%;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    z-index: 99;
+  }
+
+  .content_show {
+    display: block;
+    padding: 10px 18px;
+  }
+
+  .content_hidden {
+    display: none;
+  }
+
+  .view_content {
+    display: flex;
+    text-align: left;
+    border: none;
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 45%;
+    bottom: 25%;
+  }
+
+  .content_1,
+  .content_2,
+  .content_3 {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .content_1 p,
+  .content_2 p,
+  .content_3 p {
+    color: #333;
+    font-size: 18px;
+    margin: 0;
+  }
+
+
+  .content_1 li,
+  .content_2 li,
+  .content_3 li {
+    color: black;
+    font-size: 18px;
+  }
+
+  .content_1 h5,
+  .content_2 h5,
+  .content_3 h5 {
+    color: #263F65;
+  }
+
+  .form-check {
+    font-size: 18px;
+    font-weight: 600;
+    color: #727272;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    margin-left: 9px;
+  }
+
+  .form-check input {
+    border: 1px solid #a6a6a6;
+  }
+
+  .form-select {
+    font-size: 18px;
+    font-weight: 600;
+    color: #727272;
+    letter-spacing: 1px;
+    width: 300px;
+    margin-top: 20px;
+  }
+
+  .plan_btn {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #0d4955;
+  }
+
+  .plan_btn:hover {
+    color: #020202;
+    background-color: #21788996;
+  }
+
+  .alert {
+    position: absolute;
+    width: 100%;
+  }
+
+  .alert-danger {
+    top: 162%;
+    display: none;
+  }
+
+  .alert-success {
+    top: 162%;
+    display: none;
+  }
+</style>
+
+<script>
+  function radioValue() {
+    let pakage_selected = document.getElementsByClassName('form-check-input');
+    let company_selected = document.getElementById('option_value');
+    let alert_success = document.getElementsByClassName('alert-success');
+    let alert_danger = document.getElementsByClassName('alert-danger');
+
+    if (!pakage_selected.checked) {
+      alert_danger.style.display = 'block'
+    }
+  }
+</script>
+
+</html>

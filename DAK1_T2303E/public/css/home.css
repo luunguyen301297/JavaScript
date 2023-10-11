@@ -1,0 +1,940 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =======================Slider======================= */
+.banner_slider .slide {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000a0), url(../images/car-insurance.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 520px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  margin-top: 100px;
+}
+
+.banner_slider .slide_two {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000a0), url(../images/slider-2.jpg);
+}
+
+.banner_slider .slide_three {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000a0), url(../images/slider-3.jpg);
+}
+
+.slide_content {
+  color: #FAFAFA;
+  max-width: 600px;
+  padding: 0 25px;
+  margin-left: 10px;
+}
+
+.slide_content h2 {
+  font-size: 40px;
+  margin: 15px 0;
+  font-weight: 700;
+}
+
+.slide_content p {
+  color: #fafafae2;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.slide_content .btn {
+  text-decoration: none;
+  color: #fafafae2;
+  background-color: #47aec08a;
+  padding: 6px 28px;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+.slide_content .btn:hover {
+  color: #263F65;
+  background-color: #2CAAC1;
+  outline-offset: 3px;
+}
+
+.banner_slider .slick-dots {
+  width: 100%;
+  bottom: 6%;
+}
+
+.banner_slider .slick-dots li button::before {
+  font-size: 15px;
+  color: #2cabc1b0;
+}
+
+.banner_slider .slick-dots li {
+  margin: 0 3px;
+}
+
+.banner_slider .slick-dots li.slick-active button::before {
+  opacity: 1;
+  color: #2cabc1b0;
+}
+
+/* =======================Company======================= */
+.company {
+  height: 150px;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 50px;
+}
+
+.sideline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #263F65;
+  width: 30%;
+  margin: 0 auto;
+  font-weight: 600;
+}
+
+.sideline:before,
+.sideline:after {
+  content: '';
+  border-top: 1.5px solid rgba(183, 183, 183, 0.827);
+  margin: 0 20px 0 0;
+  flex: 1 0 20px;
+}
+
+.sideline:after {
+  margin: 0 0 0 20px;
+}
+
+.company-item {
+  display: flex;
+}
+
+.company img {
+  height: 50px;
+  margin: 20px 50px;
+}
+
+/* =======================Social carousel======================= */
+.insurance_header {
+  text-align: center;
+  margin: 20px auto 40px auto;
+}
+
+.insurance_header h2 {
+  font-size: 35px;
+  margin: 10px 0;
+  color: #263F65;
+  font-weight: 700;
+}
+
+.insurance_header p {
+  font-size: 17px;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: rgba(78, 78, 78, 0.934);
+}
+
+.owl-carousel {
+  padding: 0 8%;
+}
+
+.owl-carousel .item {
+  width: 230px;
+  height: 350px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.owl-carousel .item-1 {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000cd), url(../images/card-1.jpg);
+}
+
+.owl-carousel .item-txt {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.owl-carousel .item h4 {
+  margin: 52% 0 5px 0;
+  font-weight: 700;
+  color: #FAFAFA;
+}
+
+.owl-carousel .item p {
+  font-size: 13px;
+  color: #FAFAFA;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.owl-carousel .item a {
+  text-decoration: none;
+  color: rgb(246, 246, 246);
+  background-color: #47adc0ac;
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-weight: 600;
+}
+
+.owl-carousel .item a:hover {
+  color: #263F65;
+  background-color: #2CAAC1;
+  outline-offset: 3px;
+}
+
+/* =======================Insurance Plan======================= */
+.insurance-plan {
+  width: 100%;
+  margin: 60px 0;
+  display: flex;
+  height: 400px;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #2cabc132, #2cabc100);
+  transition: 0.5s all;
+}
+
+.plan-img {
+  width: 50%;
+  background-image: url(../images/plan-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 9%;
+}
+
+.plan-header {
+  width: 50%;
+  margin-right: 8%;
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+.plan-header h2 {
+  font-size: 35px;
+  margin: 20px 0;
+  color: #263F65;
+  font-weight: 700;
+}
+
+.plan-header p {
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: rgba(78, 78, 78, 0.934);
+  margin-bottom: 30px;
+}
+
+.plan-header a {
+  font-size: 17px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #2CAAC1;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-weight: 600;
+}
+
+.plan-header a:hover {
+  text-decoration: none;
+  color: #263F65;
+  background-color: #47adc0ac;
+  outline-offset: 3px;
+}
+
+.plan-header i {
+  font-size: 14px;
+}
+
+/* =======================Vehicle insurance======================= */
+.vehicle-insurance {
+  display: flex;
+  margin: 70px 0;
+}
+
+.vehicle-header {
+  width: 50%;
+  padding: 2% 7% 9% 9%;
+}
+
+.vehicle-header b {
+  color: #248698;
+  border-bottom: 3px solid #24879827;
+  padding-bottom: 5px;
+}
+
+.vehicle-header h2 {
+  font-size: 35px;
+  margin: 10px 0;
+  color: #263F65;
+  font-weight: 700;
+}
+
+.vehicle-header p {
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: rgba(78, 78, 78, 0.934);
+  margin: 15px 0;
+}
+
+.vehicle-header a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #2CAAC1;
+  padding: 8px 12px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+.vehicle-list {
+  display: block;
+  padding-right: 9%;
+  width: 50%;
+}
+
+.vehicle-item {
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+  height: 100px;
+  padding: 20px 30px;
+  margin: 10px 0;
+}
+
+.vehicle-1 {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #000000cd), url(../images/vehicle-1.jpg);
+}
+
+.vehicle-2 {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #000000cd), url(../images/vehicle-2.jpg);
+}
+
+.vehicle-3 {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #000000cd), url(../images/vehicle-3.jpg);
+}
+
+.vehicle-item h2 {
+  font-size: 25px;
+  margin: auto 0;
+  color: #fafafaf3;
+}
+
+.vehicle-item a {
+  margin: auto 0;
+  font-size: 50px;
+  text-decoration: none;
+  color: #248698;
+}
+
+.vehicle-item a:hover {
+  color: #2CAAC1;
+}
+
+/* =======================Advertisement======================= */
+.advertisement {
+  display: flex;
+  margin-bottom: 50px;
+  background: linear-gradient(to left, #2cabc132, #2cabc100);
+  height: 550px;
+}
+
+.grid-header {
+  width: 45%;
+  padding: 2% 7% 5% 9%;
+  margin: auto 0;
+}
+
+.grid-container {
+  width: 55%;
+  padding-right: 8%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.grid-header b {
+  font-size: 17px;
+  color: #248698;
+  border-bottom: 3px solid #24879827;
+  padding-bottom: 5px;
+}
+
+.grid-header h2 {
+  font-size: 35px;
+  color: #263F65;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.grid-header p {
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: rgba(78, 78, 78, 0.934);
+  margin: 15px 0;
+}
+
+.grid-btn {
+  display: flex;
+}
+
+.grid-header a {
+  text-decoration: none;
+  border-radius: 7px;
+  font-weight: 600;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.grid-header i {
+  font-size: 14px;
+}
+
+.grid-header .btn-1 {
+  color: #fff;
+  background-color: #2CAAC1;
+  padding: 6px 12px;
+}
+
+.grid-header .btn-1:hover {
+  text-decoration: none;
+  color: #263F65;
+  background-color: #47adc0ac;
+  outline-offset: 3px;
+}
+
+.grid-header .btn-2 {
+  color: #2CAAC1;
+  border: 2px solid #47adc0ac;
+  padding: 4px 12px;
+}
+
+.grid-header .btn-2:hover {
+  text-decoration: none;
+  color: #263F65;
+  background-color: #47adc0ac;
+}
+
+.grid-item {
+  margin: 4%;
+  padding: 8%;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.grid-item h4 {
+  font-size: 16px;
+  margin-top: 15px;
+  color: #263F65;
+  font-weight: 600;
+}
+
+.grid-item p {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: rgb(94, 94, 94);
+  font-weight: 500;
+}
+
+.grid-item i {
+  font-size: 30px;
+  padding: 10px 10px 7px 10px;
+  border-radius: 10px;
+}
+
+.grid-1 i {
+  color: #2BB59C;
+  background-color: #E6F4F3;
+}
+
+.grid-2 i {
+  color: #59A1FE;
+  background-color: #EBF3FC;
+}
+
+.grid-3 i {
+  color: #F86262;
+  background-color: #ffeee7;
+}
+
+.grid-4 i {
+  color: #f4cb38;
+  background-color: #fff8e9;
+}
+
+/* =======================GG Play======================= */
+.gg-app {
+  display: flex;
+  margin: 50px 9%;
+}
+
+.gg-img {
+  width: 50%;
+}
+
+.app-content {
+  width: 50%;
+  padding-top: 75px;
+  padding-left: 7%;
+  padding-right: 1%;
+}
+
+.app-content h2 {
+  font-size: 35px;
+  color: #263F65;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.app-content p {
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: rgba(78, 78, 78, 0.934);
+  margin: 15px 0;
+}
+
+.app-btn {
+  display: flex;
+}
+
+.app-btn img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+
+/* =======================Responsive======================= */
+@media only screen and (max-width: 1076px) {
+  .advertisement {
+    height: 550px;
+  }
+
+  .grid-item {
+    height: 240px;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .sideline {
+    width: 50%;
+  }
+
+  .company {
+    height: 120px;
+  }
+
+  .company img {
+    height: 40px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  .insurance_header {
+    margin: 20px auto;
+  }
+
+  .insurance_header h2 {
+    font-size: 24px;
+  }
+
+  .insurance_header p {
+    margin: 0 10px;
+  }
+
+  /* =======================Insurance Plan======================= */
+  .insurance-plan {
+    height: 400px;
+  }
+
+  .plan-img {
+    margin-left: 5%;
+  }
+
+  .plan-header {
+    margin-right: 5%;
+    padding-left: 4%;
+    padding-top: 4%;
+  }
+
+  .plan-header h2 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+
+  .plan-header p {
+    margin-bottom: 20px;
+  }
+
+  /* =======================Vehicle insurance======================= */
+  .vehicle-insurance {
+    display: flex;
+    margin: 60px 0;
+  }
+
+  .vehicle-header {
+    padding: 5%;
+  }
+
+  .vehicle-header h2 {
+    font-size: 24px;
+  }
+
+  .vehicle-header p {
+    margin: 10px 0;
+  }
+
+  .vehicle-list {
+    padding-right: 5%;
+  }
+
+  .vehicle-item {
+    height: 120px;
+    padding: 20px;
+  }
+
+  /* =======================Advertisement======================= */
+  .advertisement {
+    height: 550px;
+  }
+
+  .grid-header {
+    width: 40%;
+    padding: 5%;
+  }
+
+  .grid-container {
+    width: 60%;
+    padding-right: 5%;
+  }
+
+  .grid-item {
+    height: 240px;
+  }
+
+  .gg-app {
+    margin: 30px 5%;
+  }
+
+  .app-content {
+    padding-top: 50px;
+    padding-left: 5%;
+  }
+
+  .app-content p {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  .app-btn img {
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .advertisement {
+    height: 550px;
+  }
+
+  .grid-header .btn-1 {
+    display: none;
+  }
+
+  .grid-header .btn-2 {
+    color: #fff;
+    background-color: #2CAAC1;
+  }
+
+  .grid-item {
+    height: 240px;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .slide_content {
+    padding-right: 50px;
+    margin: 0;
+  }
+
+
+.slide_content h2 {
+  font-size: 35px;
+  margin-top: 0;
+}
+
+  .grid-item {
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 706px) {
+  .advertisement {
+    height: 580px;
+  }
+
+  .grid-header {
+    width: 40%;
+    padding: 5%;
+  }
+
+  .grid-header .btn-1 {
+    display: none;
+  }
+
+  .grid-header .btn-2 {
+    color: #fff;
+    background-color: #2CAAC1;
+  }
+
+  .grid-container {
+    width: 60%;
+    padding-right: 5%;
+  }
+
+  .grid-item {
+    height: 270px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .sideline {
+    width: 80%;
+  }
+
+  .company {
+    height: 100px;
+  }
+
+  .company img {
+    height: 30px;
+    margin: 10px auto;
+    padding: 0 10px;
+  }
+
+  .insurance_header {
+    margin: 20px auto;
+  }
+
+  .insurance_header h2 {
+    font-size: 24px;
+  }
+
+  .insurance_header p {
+    margin: 0 10px;
+  }
+
+  /* =======================Insurance Plan======================= */
+  .insurance-plan {
+    height: 400px;
+  }
+
+  .plan-img {
+    margin-left: 5%;
+  }
+
+  .plan-header {
+    margin-right: 5%;
+    padding-left: 4%;
+    padding-top: 4%;
+  }
+
+  .plan-header h2 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+
+  .plan-header p {
+    margin-bottom: 20px;
+  }
+
+  /* =======================Vehicle insurance======================= */
+  .vehicle-insurance {
+    display: flex;
+    margin: 60px 0;
+  }
+
+  .vehicle-header {
+    padding: 5%;
+  }
+
+  .vehicle-header h2 {
+    font-size: 24px;
+  }
+
+  .vehicle-header p {
+    margin: 10px 0;
+  }
+
+  .vehicle-list {
+    padding-right: 5%;
+  }
+
+  .vehicle-item {
+    height: 120px;
+    padding: 20px;
+  }
+
+  /* =======================Advertisement======================= */
+  .advertisement {
+    height: 450px;
+  }
+
+  .grid-header {
+    width: 50%;
+    padding: 5%;
+  }
+
+  .grid-container {
+    width: 50%;
+    padding-right: 5%;
+  }
+
+  .grid-header p {
+    font-size: 13px;
+  }
+
+  .grid-header .btn-1 {
+    display: none;
+  }
+
+  .grid-header .btn-2 {
+    color: #fff;
+    background-color: #2CAAC1;
+  }
+
+  .grid-item {
+    height: 190px;
+  }
+
+  .grid-item p {
+    opacity: 0;
+  }
+
+  .gg-app {
+    margin: 30px 5%;
+  }
+
+  .app-content {
+    padding-top: 50px;
+    padding-left: 5%;
+  }
+
+  .app-content p {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  .app-btn img {
+    height: 30px;
+  }
+}
+
+@media only screen and (max-width: 474px) {
+  .insurance-plan {
+    height: 550px;
+    display: block;
+  }
+
+  .plan-img {
+    width: 100%;
+    height: 300px;
+    margin: auto;
+  }
+
+  .plan-header {
+    width: 100%;
+  }
+
+  .vehicle-insurance {
+    display: block;
+  }
+
+  .vehicle-header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .vehicle-header b {
+    display: none;
+  }
+
+  .vehicle-header p {
+    display: none;
+  }
+
+  .vehicle-list {
+    display: block;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+  }
+
+  .advertisement {
+    display: block;
+    height: 660px;
+  }
+
+  .grid-header {
+    width: 100%;
+    padding: 5%;
+  }
+
+  .grid-container {
+    width: 100%;
+    padding: 5%;
+  }
+
+  .grid-header p {
+    font-size: 13px;
+  }
+
+  .grid-header .btn-1 {
+    display: none;
+  }
+
+  .grid-header .btn-2 {
+    color: #fff;
+    background-color: #2CAAC1;
+  }
+
+  .grid-item {
+    height: 130px;
+  }
+
+  .grid-item p {
+    opacity: 0;
+  }
+
+  .gg-app {
+    display: block;
+  }
+
+  .gg-img {
+    width: 100%;
+  }
+
+  .app-content {
+    width: 100%;
+    padding-top: 50px;
+    padding: 5%;
+  }
+
+  .app-content p {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  .app-btn img {
+    height: 30px;
+  }
+}

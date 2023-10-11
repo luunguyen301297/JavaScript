@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="mainbox" id="mainbox">
+      <ul class="box box1" id="box1">
+        <li class="item"><img src="./img/reward1.png" /></li>
+        <li class="item"><img src="./img/reward2.png" /></li>
+        <li class="item"><img src="./img/reward3.png" /></li>
+        <li class="item"><img src="./img/reward4.png" /></li>
+      </ul>
+
+      <ul class="box box2" id="box2">
+        <li class="item"><img src="./img/reward7.png" /></li>
+        <li style="width: 124px;"></li>
+        <li style="width: 124px;"></li>
+        <li class="item"><img src="./img/reward8.png" /></li>
+      </ul>
+
+      <ul class="box box3" id="box3">
+        <li class="item"><img src="./img/reward5.png" /></li>
+        <li style="width: 124px;"></li>
+        <li style="width: 124px;"></li>
+        <li class="item"><img src="./img/reward6.png" /></li>
+      </ul>
+
+      <ul class="box box4" id="box4">
+        <li class="item"><img src="./img/reward9.png" /></li>
+        <li class="item"><img src="./img/reward10.png" /></li>
+        <li class="item"><img src="./img/reward11.png" /></li>
+        <li class="item"><img src="./img/reward12.png" /></li>
+      </ul>
+    </div>
+
+    <div class="spin">
+      <img onclick="spin()" id="spinBtn" src="./spin.png" />
+    </div>
+
+    <audio controls="controls" id="win" src="win.wav" type="audion/mp3"></audio>
+    <audio controls="controls" id="wheel" src="wheel.mp3" type="audion/mp3"></audio>
+
+    <script src="index2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

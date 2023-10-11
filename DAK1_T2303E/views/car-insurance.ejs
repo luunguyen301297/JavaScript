@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Insurance</title>
+  <%- include ('./layout/head.ejs') -%>
+    <link rel="stylesheet" href="/css/car-insurance.css" />
+</head>
+
+<body>
+  <%- include ('./layout/header.ejs') -%>
+
+    <div style="height: 100px;"></div>
+    <div class="vehicle-panel">
+      <div class="panel-img">
+        <img src="../images/car-insurance.jpg" />
+      </div>
+
+      <div class="panel-header">
+        <h2>Purchase Car Insurance on Safe Caz</h2>
+        <p><i class="fa-solid fa-circle-check"></i> Best Premiums</p>
+        <p><i class="fa-solid fa-circle-check"></i> Quick Purchase and Grant of Contracts</p>
+        <p><i class="fa-solid fa-circle-check"></i> Submit claim on website</p>
+        <p><i class="fa-solid fa-circle-check"></i> Easy management on mobile</p>
+      </div>
+    </div>
+
+    <div class="insurance-plan">
+      <div class="plan-1">
+        <h2>Vehicle insurance</h2>
+        <p>Save time, money, and hassle by purchasing additional insurance policies in addition to <a href="/bao-hiem-o-to-tnds">TNDS Insurance</p>
+        <a class="btn" href="ke-hoach-bao-hiem">Get started now</a>
+      </div>
+
+      <div class="plan-2">
+        <h4>Average savings</h4>
+        <h1><i class="fa-solid fa-dollar-sign"></i>1,073</h1>
+        <b>Per year for<br />a comprehensive insurance plan</b>
+      </div>
+    </div>
+
+    <div class="bhbb">
+      <div class="bhbb-header">
+        <h2>Compulsory Auto Insurance</h2>
+        <p>Compulsory auto insurance (TNDS) is a passport and an obligation of motor vehicle owners when participating in road traffic, and helps you pay for accidental damage that you are supposed to receive. person at fault</p>
+        <a href="bao-hiem-o-to-tnds">See more</a>
+      </div>
+
+      <div class="bhbb-bg"></div>
+    </div>
+
+    <div class="vehicle-insurance">
+      <div class="vehicle-header">
+        <h2>Voluntary Auto Insurance</h2>
+        <p>Besides buying Civil liability insurance according to state regulations, car users should equip other types
+          of voluntary insurance to reduce risks and costs when damage occurs. </p>
+      </div>
+
+      <div class="vehicle-list">
+        <div class="owl-carousel owl-theme">
+          <% for ( let [index, p] of product.entries()) { %>
+            <div class="item">
+              <div class="item-txt">
+                <h4 class="item-header">
+                  <%= p.name %>
+                </h4>
+                <p>
+                  <%= p.content %>
+                </p>
+                <a href="<%= p.slug %>" class="item-btn">View More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <% } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h2>Frequently asked questions</h2>
+
+      <div><%- include ('./form/Q&A.ejs') -%></div>
+    </div>
+
+    <div><%- include ('./form/dktv.ejs') -%></div>
+
+    <div class="company">
+      <div class="sideline">Partner for Vehicle Insurance</div>
+      <div class="company_item">
+        <a href="https://baohiem-liberty.com.vn/"><img src="../images/company-3.jpg" /></a>
+        <a href="http://pvibaohiemsh.com/"><img src="../images/company-4.jpg" /></a>
+      </div>
+    </div>
+
+    <%- include ('./layout/footer.ejs') -%>
+
+      <script src="/js/car-insurance.js"></script>
+</body>
+
+</html>

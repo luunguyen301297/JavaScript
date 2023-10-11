@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div ng-app="Demo">
+    <div ng-controller="myCtrl">
+      <table class="table">
+        <tr>
+          <td>Name</td>
+          <td>like</td>
+          <td>Dislike</td>
+          <td>Minus</td>
+          <td>Actions</td>
+        </tr>
+        <tr ng-repeat="technology in technologies">
+          <td>{{technology.Name}}</td>
+          <td>{{technology.Likes}}</td>
+          <td>{{technology.Dislikes}}</td>
+          <td>{{technology.Rate}}</td>
+          <td>
+            <button ng-click="increaseLike(technology)">Like</button>
+            <button ng-click="increaseDislike(technology)">Disike</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let myApp = angular.module('Demo', []);
+    myApp.controller('myCtrl', ($scope) => {
+      let technologies = [
+        {Name: 'C#', Likes: 0, Dislikes: 0, Rate: 0},
+        {Name: 'ASP.NET', Likes: 0, Dislikes: 0, Rate: 0},
+        {Name: 'SQL Sever', Likes: 0, Dislikes: 0, Rate: 0},
+        {Name: 'AngularJS', Likes: 0, Dislikes: 0, Rate: 0}
+      ]
+      $scope.technologies = technologies;
+      $scope.increaseLike = (technology) => {
+        technology.Likes++
+        technology.Rate = (technology.Likes / (technology.Likes + technology.Dislikes)) * 100 + '%'
+      }
+      $scope.increaseDislike = (technology) => {
+        technology.Dislikes++
+        technology.Rate = (technology.Likes / (technology.Likes + technology.Dislikes)) * 100 + '%'
+      }
+    })
+  </script>
+</body>
+</html>

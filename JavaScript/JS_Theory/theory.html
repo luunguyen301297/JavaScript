@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //object = key & value
+    let obj = {
+      firstName: 'Luu',
+      lastName: 'Nguyen',
+      age: 25,
+      getFullname: function() {
+        return `${this.firstName} ${this.lastName}` //template string
+      }
+    }
+    console.log(`My name 's`, obj.getFullname())
+    console.log(`I'm`, obj.age)
+
+
+
+    //Array = index & value
+    let arr = [
+      {name: 'Jame', age: 25},
+      {name: 'John', age: 24}
+    ]
+    console.log(arr[0])
+
+    //array method: map: output tạo ra một Arr mới && giữ nguyên Arr cũ
+    let num = [1, 12, 8, 20]
+    let mapNum = num.map((item, index) => {
+      item = item * item;
+      return item;
+    })
+    console.log(mapNum)
+
+    //array methods: filter || find
+    let listItem = [
+      {name: 'A', age: 45},
+      {name: 'B', age: 32},
+      {name: 'C', age: 22},
+      {name: 'D', age: 58}
+    ]
+
+    let filter = listItem.filter((item, index) => {
+      return item && item.age > 40;
+    });
+    console.log(filter)
+
+    //array method: sort: sắp xếp theo thứ tự A => Z
+    listItem.sort((item1, item2) => item1.age - item2.age);
+    console.log(listItem)
+
+
+
+    //for loop
+    let club = ['MU', 'ManCity', 'Liver', 'Chelsea'];
+    for (let i = 0; i < club.length; i++) {
+      if (club[i].length <= 5){
+        console.log(i, club[i])
+      }
+    }
+
+    //for of
+    for (let i of club) {
+      console.log(i)
+    }
+
+    //for each
+    club.forEach(i => {
+      console.log(i)
+    })
+
+    //loop mot object
+    const myObj = {name: 'A', age: 18}
+    for (let item of Object.entries(myObj)) {
+      console.log(item)
+    }
+
+
+    //ternary operator (toán tử 3 ngôi)
+    let course = {
+      name: 'JavaScript',
+      coin: 250
+    }
+    let result = course.coin > 0 ? `${course.coin} Coins` : 'Free';
+    console.log(`${course.name} :`, result)
+
+
+
+    //declare function
+    function sum(a, b) {
+      return a + b;
+    }
+    console.log('a + b =', sum(6, 9))
+
+    //arrow function
+    let sum1 = (x, y) => {
+      return x + y;
+    }
+    console.log('x + y =', sum1(3, 7))
+  </script>
+</body>
+</html>

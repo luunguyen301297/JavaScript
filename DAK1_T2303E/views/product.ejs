@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./layout/head.ejs') -%>
+  <link rel="stylesheet" href="../css/product.css" />
+  <% for ( let [index, p] of products.entries()) { %>
+  <title><%= p.name %></title>
+  <body>
+    <%- include ('./layout/header.ejs') -%>
+
+    <div style="height: 100px;"></div>
+
+    <div class="vehicle-panel">
+      <div class="panel-img">
+        <img src="<%= p.image_source %>/product_car.jpg" />
+      </div>
+
+      <div class="panel-header">
+        <h2><%= p.name %></h2>
+        <p><i class="fa-solid fa-circle-check"></i> Best Premiums</p>
+        <p><i class="fa-solid fa-circle-check"></i> Quick Purchase and Grant of Contracts</p>
+        <p><i class="fa-solid fa-circle-check"></i> Submit claim on website</p>
+        <p><i class="fa-solid fa-circle-check"></i> Easy management on mobile</p>
+      </div>
+    </div>
+
+    <div class="company">
+      <div class="sideline">Partner For <%= p.name %></div>
+      <div class="company_item">
+        <a href="http://pvibaohiemsh.com/"><img src="<%= p.images %>" /></a>
+      </div>
+      <div class="company_about">
+        <p><%= p.about_company %></p>
+      </div>
+    </div>
+
+    <div class="product_page_content">
+      <h2>Product Details</h2>
+
+      <div class="nav_product_page">
+        <div class="nav_format" style="background-color: rgb(241, 241, 241);">
+          <div class="nav_item_1 nav_product_item nav_active">
+            <h4>Product Information</h4>
+          </div>
+          <div class="nav_item_2 nav_product_item">
+            <h4>Range</h4>
+          </div>
+          <div class="nav_item_3 nav_product_item">
+            <h4>Documentation</h4>
+          </div>
+        </div>
+      </div>
+      <div class="view_content">
+        <div class="content_1 content_show">
+          <% for ( let [index, y] of p.detail.entries()) { %>
+          <li style="font-weight: 500; font-size: 20px;"><%= y %></li>
+          <br />
+          <% } %>
+          <h5>I. SUBJECT OF INSURANCE</h5>
+          <% for ( let [index, y] of p.scope.entries()) { %>
+          <li><%= y %></li>
+          <% } %><br />
+          <h5>II. PERFORMANCE TIME</h5>
+          <% for ( let [index, y] of p.duration.entries()) { %>
+          <li><%= y %></li>
+          <% } %>
+        </div>
+
+        <div class="content_2 content_hidden">
+          <h5>I. SCOPE OF BENEFITS</h5>
+          <% for ( let [index, y] of p.the_insured.entries()) { %>
+          <li><%= y %></li>
+          <% } %><br />
+          <h5>II. SCOPE OF EXCLUSION</h5>
+          <% for ( let [index, y] of p.non_scope.entries()) { %>
+          <li><%= y %></li>
+          <% } %><br />
+          <h5>III. LEVEL OF INSURANCE RESPONSIBILITIES</h5>
+          <% for ( let [index, y] of p.responsibility.entries()) { %>
+          <li><%= y %></li>
+          <% } %>
+        </div>
+
+        <div class="content_3 content_hidden">
+          <ol class="hd">
+            <li>
+              <a href="upload/bieuphi.pdf">Fee schedule promulgated together with Circular No. 04/2021/TT-BTC dated January 15, 2021 of the Ministry of Finance</a>
+            </li>
+            <li>
+              <a href="<%= p.note %>">Rule <%= p.name %></a>
+            </li>
+            <li>You can file your claim for benefits <a href="/boi-thuong">here</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="product_contact">
+      <div class="contact_title">
+        <h4>Contact us</h4>
+      </div>
+      <div class="contact_banner">
+        <p>Monday - Friday from 8:30 to 17:30 (except holidays)</p>
+        <p>Email: example@gmail.com</p>
+      </div>
+      <a href="tel:123456789" class="contact_hotline">
+        <div class="hotline_form">
+          <h5>Hotline</h5>
+          <p>123456789</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="advertisement">
+      <div class="grid-header">
+        <h2>Insured benefits</h2>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item grid-1">
+          <i class="fa-solid fa-car"></i>
+          <h3>Loss of all/parts of the vehicle</h3>
+          <p>Payment for vehicle material damage caused by natural disasters, unexpected accidents such as: collision, collision, fire, explosion...</p>
+        </div>
+
+        <div class="grid-item grid-2">
+          <i class="fa-solid fa-dharmachakra"></i>
+          <h3>Theft of all/parts of the vehicle</h3>
+          <p>Stolen parts replacement cost for stolen parts: lights, mirrors...</p>
+        </div>
+
+        <div class="grid-item grid-3">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <h3>Choose genuine factory repair</h3>
+          <p>Have the right to request car repair at the nearest genuine repair facilities in the territory of Vietnam</p>
+        </div>
+
+        <div class="grid-item grid-4">
+          <i class="fa-solid fa-ship"></i>
+          <h3>Water Strike</h3>
+          <p>Paying for repair costs when the vehicle suffers engine damage due to the driver's unintentional error when driving the vehicle into the road/flooded area</p>
+        </div>
+
+        <div class="grid-item grid-5">
+          <i class="fa-solid fa-truck-medical"></i>
+          <h3>Free rescue</h3>
+          <p>Free shipping costs for damaged vehicles to the nearest repair place</p>
+        </div>
+
+        <div class="grid-item grid-6">
+          <i class="fa-solid fa-wrench"></i>
+          <h3>Replacing spare parts/supplies</h3>
+          <p>Compensation for the entire cost of new replacement for damaged parts without applying new replacement depreciation regulations</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom_product_page">
+      <div class="product_page_form">
+        <div class="form_title">
+          <h2>Leave Information For Advice As Soon As Possible</h2>
+        </div>
+        <div class="product_form">
+          <form class="form_content" onsubmit="return submitForm()">
+            <div class="top_form">
+              <div class="name_reg product_reg">
+                <span>
+                  <i class="fa-solid fa-user-tag"></i>
+                </span>
+                <input type="text" name="userName" id="name" placeholder="Name" />
+              </div>
+              <div class="phone_reg product_reg">
+                <span>
+                  <i class="fa-solid fa-address-card"></i>
+                </span>
+                <input type="tel" name="userPhoneNumber" id="phoneNumber" placeholder="Phone" />
+              </div>
+              <div class="email_reg product_reg">
+                <span>
+                  <i class="fa-solid fa-at"></i>
+                </span>
+                <input type="email" name="userEmail" id="email" placeholder="Email" />
+              </div>
+              <div class="address_reg product_reg">
+                <span>
+                  <i class="fa-solid fa-map-location-dot"></i>
+                </span>
+                <input type="text" name="userAddress" id="address" placeholder="Address" />
+              </div>
+            </div>
+            <div class="bottom_form">
+              <div class="agree">
+                <div class="check_agree">
+                  <input type="checkbox" name="check_agree" />
+                </div>
+                <div class="agree_content">
+                  <p>I agree to Safe Caz's terms of service</p>
+                </div>
+              </div>
+              <div class="btn_submit">
+                <button type="submit" id="button_submit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="alert_message">
+        <p id="message" class="alert alert-success"></p>
+      </div>
+    </div>
+
+    <% } %> <%- include ('./layout/foot.ejs') -%> <%- include ('./layout/footer.ejs') -%>
+
+    <script src="js/product.js"></script>
+  </body>
+</html>

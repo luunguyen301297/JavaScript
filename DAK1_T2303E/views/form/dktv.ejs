@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="bottom_product_page">
+      <div class="product_page_form">
+        <div class="form_title">
+          <h4>Leave Information For Advice As Soon As Possible</h4>
+        </div>
+        <div class="product_form">
+          <form class="form_content">
+            <div class="top_form">
+              <div class="name_reg product_reg">
+                <span>
+                  <i class="fa-solid fa-user-tag"></i>
+                </span>
+                <input type="text" name="userName" id="name" placeholder="Name" />
+              </div>
+              <div class="phone_reg product_reg">
+                <span>
+                  <i class="fa-solid fa-address-card"></i>
+                </span>
+                <input type="tel" name="userPhoneNumber" id="phoneNumber" placeholder="Phone" />
+              </div>
+              <div class="email_reg product_reg">
+                <span>
+                  <i class="fa-solid fa-at"></i>
+                </span>
+                <input type="email" name="userEmail" id="email" placeholder="Email" />
+              </div>
+              <div class="address_reg product_reg">
+                <span>
+                  <i class="fa-solid fa-map-location-dot"></i>
+                </span>
+                <input type="text" name="userAddress" id="address" placeholder="Address" />
+              </div>
+            </div>
+            <div class="bottom_form">
+              <div class="agree">
+                <div class="check_agree">
+                  <input type="checkbox" name="check_agree" />
+                </div>
+                <div class="agree_content"><p>I agree to Safe Caz's terms of service</p></div>
+              </div>
+              <div class="btn_submit">
+                <button type="submit" id="button_submit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="alert_message">
+        <p id="message" class="alert alert-success"></p>
+      </div>
+    </div>
+
+    <%- include ('../layout/foot.ejs') -%>
+    <script>
+      $(document).ready(function () {
+
+      $('.nav_item_1').on("click", function () {
+          $('.nav_item_1').addClass('nav_active nav_item_1');
+          $('.nav_item_2, .nav_item_3').removeClass('nav_active nav_pro_items');
+
+          $('.content_1').addClass('content_show').removeClass('content_hidden');
+          $('.content_2, .content_3').addClass('content_hidden').removeClass('content_show');
+      });
+
+      $('.nav_item_2').on("click", function () {
+          $('.nav_item_2').addClass('nav_active nav_item_2');
+          $('.nav_item_1, .nav_item_3').removeClass('nav_active nav_pro_items');
+
+          $('.content_2').addClass('content_show').removeClass('content_hidden');
+          $('.content_1, .content_3').addClass('content_hidden').removeClass('content_show');
+      });
+
+      $('.nav_item_3').on("click", function () {
+          $('.nav_item_3').addClass('nav_active nav_item_3');
+          $('.nav_item_1, .nav_item_2').removeClass('nav_active nav_pro_items');
+
+          $('.content_3').addClass('content_show').removeClass('content_hidden');
+          $('.content_1, .content_2').addClass('content_hidden').removeClass('content_show');
+      });
+
+      $('#button_submit').prop('disabled', true);
+      $('input[name=check_agree]').click( () => {
+          $('#button_submit').prop('disabled', !$("input[name=check_agree]").prop("checked"));
+      });
+
+      $(".form_content").validate({
+      onfocusout: false,
+      onkeyup: false,
+      onclick: false,
+      rules: {
+        "userName": {
+          required: true
+        },
+              "userPhoneNumber": {
+          required: true,
+          maxlength: 15
+        },
+              "userEmail": {
+          required: true,
+        },
+              "userAddress": {
+          required: true,
+        }
+      },
+      messages: {
+        "userName": {
+          required: "Bắt buộc nhập họ và tên"
+        },
+        "userPhoneNumber": {
+          required: "Bắt buộc nhập số điện thoại",
+          minlength: "Vui lòng nhập số điện thoại hợp lệ"
+        },
+        "userEmail": {
+          required: "Vui lòng nhập email"
+        },
+              "userAddress": {
+                  required: "Vui lòng nhập địa chỉ"
+              }
+      }
+      });
+
+      $('#button_submit').on('click', function(event) {
+          event.preventDefault();
+          $(".form_content").valid();
+          let name = $('#name');
+          let phoneNumber = $('#phoneNumber');
+          let email = $('#email');
+          let address = $('#address');
+          let req = new XMLHttpRequest();
+
+          req.open('POST', '/dang-ky');
+          req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          req.send('userName=' + name.val() + '&userPhoneNumber=' + phoneNumber.val() + '&userEmail=' + email.val() + '&userAddress=' + address.val());
+
+          req.onreadystatechange = () => {
+              if(req.readyState == 4 && req.status == 200 && $(".form_content").valid()) {
+                  $("#message").text(req.responseText);
+                  $(".alert_message").show();
+                  name.val('');
+                  phoneNumber.val('');
+                  email.val('');
+                  address.val('');
+              }
+          };
+      });
+
+      $('input').on('input', () => {
+          $('input').css('color', 'black').removeClass('error');
+          $('.error').css('display', 'none');
+      });
+
+      });
+    </script>
+
+    <style>
+      .bottom_product_page {
+        background: #fafafa;
+        width: 100%;
+        height: 400px;
+        position: relative;
+      }
+
+      .product_page_form {
+        width: 80%;
+        height: 90%;
+        position: absolute;
+        top: 5%;
+        bottom: 5%;
+        left: 10%;
+      }
+
+      .top_form {
+        position: relative;
+        height: 70%;
+        width: 100%;
+      }
+
+      .product_form {
+        height: 80%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+      }
+
+      .form_content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .form_title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .form_title h4 {
+        padding-top: 50px;
+        height: 100%;
+        width: auto;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+      }
+
+      .product_reg {
+        position: absolute;
+        width: 45%;
+        height: 20%;
+      }
+
+      .product_reg span {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(94, 94, 94, 0.934);
+      }
+
+      .product_reg input {
+        width: 100%;
+        height: 100%;
+        padding-left: 30px;
+        border: none;
+        border-bottom: 1px solid rgba(94, 94, 94, 0.934);
+        outline: none;
+        background-color: #fafafa;
+      }
+
+      .name_reg {
+        position: absolute;
+        top: 30%;
+        left: 0;
+      }
+
+      .phone_reg {
+        position: absolute;
+        top: 30%;
+        right: 0;
+      }
+
+      .email_reg {
+        position: absolute;
+        top: 60%;
+        right: 0;
+      }
+
+      .address_reg {
+        position: absolute;
+        top: 60%;
+        left: 0;
+      }
+
+      .error {
+        color: red;
+      }
+
+      .bottom_form {
+        height: 15%;
+        position: relative;
+        width: 100%;
+        bottom: 0;
+      }
+
+      .agree {
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.4em;
+        height: 100%;
+        width: 70%;
+      }
+
+      .agree .check_agree {
+        height: 100%;
+        width: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .check_agree input {
+        height: 40%;
+        width: 40%;
+      }
+
+      .agree_content {
+        display: flex;
+        height: 100%;
+        width: auto;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .agree_content p {
+        color: rgba(78, 78, 78, 0.934);
+        font-size: 16px;
+        font-weight: 500;
+        padding-top: 2px;
+      }
+
+      .btn_submit {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .btn_submit button {
+        height: 80%;
+        width: 60%;
+        position: relative;
+        right: 8%;
+        border: none;
+        border-radius: 6px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        background-color: #1b6774;
+        color: #fff;
+      }
+
+      .alert_message {
+        position: absolute;
+        bottom: 0;
+        width: 80%;
+        left: 10%;
+        display: none;
+      }
+    </style>
+  </body>
+</html>

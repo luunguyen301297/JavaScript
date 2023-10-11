@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: grey;">
+  <script>
+    let signin = () => {
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      if (email === "" || password === "") {
+        alert("Vui lòng điền đầy đủ thông tin")
+        return;
+      }
+
+      if (password.length < 6) {
+        alert("Password cần ít nhất 6 ký tự")
+        return;
+      }
+
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+        let choice = confirm("Success");
+        return;
+      } else {
+        alert("Định dạng email không hợp lệ")
+        return;
+      }
+    }
+
+    let signup = () => {
+      let name = document.getElementById("name").value
+      let email = document.getElementById("email2").value;
+      let password = document.getElementById("password2").value;
+      let confirmPassword = document.getElementById("confirm-password").value
+
+      if (email === "" || password === "" || name === "") {
+        alert("Vui lòng điền đầy đủ thông tin")
+        return;
+      }
+
+      if (password.length < 6) {
+        alert("Password cần ít nhất 6 ký tự")
+        return;
+      }
+
+      if (password != confirmPassword) {
+        alert("Xác nhận lại password")
+      }
+
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+        let choice = confirm("Success");
+        return;
+      } else {
+        alert("Định dạng email không hợp lệ")
+        return;
+      }
+    }
+
+    let switchTab1 = () => {
+      let form1 = document.getElementById("form-1");
+      let form2 = document.getElementById("form-2");
+      form1.style.display = "block";
+      form2.style.display = "none";
+    }
+
+    let switchTab2 = () => {
+      let form1 = document.getElementById("form-1");
+      let form2 = document.getElementById("form-2");
+      form1.style.display = "none";
+      form2.style.display = "block";
+    }
+  </script>
+
+
+  <div class="container" style="max-width: 500px; margin-top: 50px; padding: 30px; background-color: white;">
+    <div>
+      <ul class="nav nav-tabs">
+        <li onclick="switchTab1()" style="width: 217px; text-align: center;">
+          <a href="#login" class="nav-link active" data-bs-toggle="tab">Login</a>
+        </li>
+        <li onclick="switchTab2()" style="width: 217px; text-align: center;">
+          <a href="#register" class="nav-link" data-bs-toggle="tab">Register</a>
+        </li>
+      </ul>
+
+    <div style="height: 20px;"></div>
+
+    <form style="display: block;" id="form-1">
+      <div>
+        <label>EMAIL</label><br>
+        <input style="width: 435px;" type="text" for="email" id="email" placeholder="example@email.com">
+      </div>
+
+      <div style="height: 20px;"></div>
+
+      <div>
+        <label>PASSWORD</label><br>
+        <input style="width: 435px;" type="password" for="password" id="password">
+      </div>
+
+      <div>
+        <a href="#" class="float-right text-success">Forgot Password?</a>
+        <div style="height: 10px;"></div>
+        <button onclick="signin()"
+        type="signin" class="btn btn-success btn-block login-btn">Sign In</button>
+      </div>
+    </form>
+
+    <form style="display: none;" id="form-2">
+      <div>
+        <label>FULLNAME</label><br>
+        <input style="width: 435px;" type="text" for="name" id="name" placeholder="Nguyễn Văn Lưu">
+      </div>
+
+      <div>
+        <label>EMAIL</label><br>
+        <input style="width: 435px;" type="text" for="email" id="email2" placeholder="example@email.com">
+      </div>
+
+      <div style="height: 20px;"></div>
+
+      <div>
+        <label>PASSWORD</label><br>
+        <input style="width: 435px;" type="password" for="password" id="password2">
+      </div>
+
+      <div>
+        <label>CONFIRM PASSWORD</label><br>
+        <input style="width: 435px;" type="password" for="confirm-password" id="confirm-password">
+      </div>
+
+      <div>
+        <div style="height: 10px;"></div>
+        <button onclick="signup()"
+        type="signin" class="btn btn-success btn-block login-btn">Sign Up</button>
+      </div>
+    </form>
+
+    <div style="text-align: center;"><p style="color: grey;">or</p></div>
+
+    <div class="tab-content">
+      <a href="https://www.facebook.com/" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
+
+      <a style="background-color: rgb(207, 3, 3);" href="https://accounts.google.com/v3/signin/identifier?dsh=S-1794177598%3A1684022693234690&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=Af_xneHXgJRozvYQtxbBYStObpQN2qBkCHMtWKLBQmj4NlOiFD3NsA-ChTVjExwPax_eEal7rtDU&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+        class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Google</b></a>
+    </div>
+  </div>
+</body>
+</html>

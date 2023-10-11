@@ -1,0 +1,22 @@
+label {
+  font-weight: bold;
+}
+
+.form-container {
+  width: 60%;
+  margin: 50px auto;
+}
+
+.form-container .container {
+  width: 90%;
+  margin: 30px auto;
+}
+
+.storage-buttons {
+  float: right;
+}
+
+.alert-success {
+  margin-top: 10px;
+  display: none;
+}

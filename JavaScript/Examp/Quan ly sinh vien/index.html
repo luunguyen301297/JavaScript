@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="form-container">
+	<div class="logo"></div>
+
+	<div class="container">
+		<h2>Student Information</h2>
+		<form>
+			<div class="form-group">
+				<label for="masv">Student ID:</label>
+				<input type="text" class="form-control" id="student-id"  placeholder="Mã SV" name="MaSV">
+			</div>
+
+			<div class="form-group">
+				<label for="hoten">Name</label>
+				<input type="text" class="form-control" id="name" placeholder="Họ và tên" name="hoten">
+			</div>
+
+			<div class="form-group">
+				<label for="Toan">Maths score</label>
+				<input type="number" class="form-control" id="maths-score" placeholder="Điểm Toán" name="Toan">
+			</div>
+
+			<div class="form-group">
+				<label for="Ly">Physics score</label>
+				<input type="number" class="form-control" id="physics-score" placeholder="Điểm Lý" name="Ly">
+			</div>
+
+			<div class="form-group">
+				<label for="Hoa"> Chemystry score</label>
+				<input type="number" class="form-control" id="chemystry-score" placeholder="Điểm Hóa" name="Hoa">
+			</div>
+
+			<button type="button" class="btn btn-primary" id="add-student">Add student</button>
+			<button type="button" class="btn btn-success" id="save-date">Save data</button>
+		</form>
+
+		<div class="storage-buttons">
+		  <button class="btn btn-primary" id="set-storage">Set storage</button>
+		  <button class="btn btn-success" id="get-storage">Get storage</button>
+		  <button class="btn btn-danger" id="delete-student">Delete student</button>
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	<div class="container">
+	 	<div class="input-group">
+	 		<input type="text" id="search-key" class="form-control" placeholder="Tìm kiếm...">
+	 	  <span class="input-group-btn">
+			  <button class="btn btn-secondary" id="search-click" type="button">Search</button>
+	 	  </span>
+	  </div>
+
+	  <div class="alert alert-success" id="search-alert"></div>
+  </div>
+
+  <div class="container">
+    <h2>List Student</h2>
+
+	  <table class="table" id="student-table">
+	    <tr>
+	      <th></th>
+	      <th>Student ID</th>
+	      <th>Name</th>
+	      <th>GPA</th>
+	      <th>Ranked</th>
+	    </tr>
+	  </table>
+	</div>
+</div>
+
+<script src="Student.js"></script>
+</body>
+</html>

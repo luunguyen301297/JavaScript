@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <%- include ('./layout/head.ejs') -%>
+  </head>
+
+  <body>
+    <%- include ('./layout/header.ejs') -%>
+
+    <!-- OUR SITE -->
+    <div class="top_about_us">
+      <div class="about_us_area">
+        <div class="about_us_title">
+          <h4>We are always with you.</h4>
+          <h4>easily make decisions to protect your health,<br>wealth and build a better future.</h4>
+        </div>
+
+        <div class="custom-shape-divider-bottom-1689753441">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT US -->
+    <div class="about_us">
+      <div class="about_section">
+        <div class="ac_area">
+          <div class="ac_poster">
+            <div class="poster_img_1"></div>
+          </div>
+          <div class="ac_content content_1">
+            <div class="ac_content_title">
+              <h2>About Us</h2>
+            </div>
+            <div class="ac_content_param">
+              <p>In Safe Caz, We accompany our clients in making decisions about asset protection, health, wealth gcompany_rowth as well as future planning. With more than 1.5 million customers, a team of professional consultants and strategic partners distributing insurance products and a network of 80 offices across the country.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ac_area">
+          <div class="ac_content content_2">
+            <div class="ac_content_title">
+              <h2>Prize</h2>
+            </div>
+            <div class="ac_content_param">
+              <ul>
+                <li>Honored "Top 100 Best Places to Work in Vietnam" in Anphabe's annual survey, continues to maintain the #1 position in the insurance industry category for 5 consecutive years and holds # 34 in the list of 100 companies in the fields.</li>
+                <li>The title of "Leading company in digital health products and services of the year" at the Golden Dragon Awards 2022. This is the 12th time Manulife Vietnam has been honored at the Golden Dragon Awards.</ li>
+              </ul>
+            </div>
+          </div>
+          <div class="ac_poster">
+            <div class="poster_img_2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPANY SITE -->
+    <div class="company">
+      <div class="company_row">
+        <h1>Our Partner Companies</h1>
+      </div>
+      <div class="company_row">
+        <% for ( let [index, c] of company.entries()) { %>
+        <div class="column">
+          <div class="copany_card">
+            <div class="img-container">
+              <img src="<%= c.logo %>" />
+            </div>
+            <h3><%= c.name %></h3>
+            <div class="icons">
+              <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="#">
+                <i class="fa-solid fa-earth-americas"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <%- include ('./layout/footer.ejs') -%>
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .top_about_us {
+    display: block;
+    padding-top: 5%;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.311), #000000aa), url('images/about/about_pic_1.jpg');
+  }
+
+  .about_us_title {
+    height: 30%;
+    top: 55%;
+    position: absolute;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .about_us_title h4 {
+    font-weight: 700;
+    font-size: 40px;
+    color: #f0f0f0f6;
+    letter-spacing: 1px;
+  }
+
+
+  .about_us {
+    width: 100%;
+    height: 900px;
+    padding-top: 10%;
+  }
+
+  .about_section {
+    width: 80%;
+    margin: 0 10%;
+    height: 100%;
+  }
+
+  .ac_area {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ac_content {
+    width: 60%;
+    height: 90%;
+  }
+
+  .ac_content_title,
+  .ac_content_param {
+    width: 100%;
+    display: block;
+  }
+
+  .ac_content_title {
+    height: 10%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ac_content_title h2 {
+  color: #263F65;
+  font-weight: 700;
+  letter-spacing: 1px;
+  }
+  .ac_content_param {
+    height: 90%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.2em;
+  }
+
+  .ac_content_param p {
+    margin: 0 5%;
+  }
+
+  .ac_content_param li {
+    margin: 0 5%;
+  }
+
+  .ac_poster {
+    width: 40%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+
+  .poster_img_1,
+  .poster_img_2 {
+    width: 90%;
+    height: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .poster_img_1 {
+    background-image: url('images/about/about_pic_2.jpg');
+    border-radius: 5px;
+  }
+
+  .poster_img_2 {
+    background-image: url('images/about/about_pic_3.jpg');
+    border-radius: 5px;
+  }
+
+
+
+
+  .right_about_us {
+    position: absolute;
+    width: 60%;
+    right: 0%;
+    height: 100%;
+    top: 0%;
+    bottom: 0%;
+  }
+
+
+
+
+
+
+  .custom-shape-divider-bottom-1689753441 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+  }
+
+  .custom-shape-divider-bottom-1689753441 svg {
+    position: relative;
+    display: block;
+    width: calc(130% + 1.3px);
+    height: 124px;
+  }
+
+  .custom-shape-divider-bottom-1689753441 .shape-fill {
+    fill: #FFFFFF;
+  }
+
+
+
+
+
+
+
+
+
+  .company {
+    background: linear-gradient(to right, #a4aede, #9cc6d1);
+    width: 100%;
+  }
+
+  .company_row {
+    padding: 2em 1em;
+    text-align: center;
+    margin: 0 10% 0 10%;
+    display: flex;
+  }
+
+  .column {
+    width: 100%;
+    padding: 0.5em 0;
+  }
+
+  .company_row h1 {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: #1f003b;
+  }
+
+  .copany_card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 0 1em;
+    border-radius: 0.6em;
+    color: #1f003b;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #ffffff;
+    margin-bottom: 3em;
+  }
+
+  .copany_card .img-container {
+    width: 8em;
+    height: 8em;
+    background: linear-gradient(to right, #a4aede, #9cc6d1);
+    padding: 0.5em;
+    border-radius: 50%;
+    margin: 0 auto 2em auto;
+  }
+
+  .copany_card img {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  .copany_card h3 {
+    font-weight: 600;
+  }
+
+  .copany_card p {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0.5em 0 2em 0;
+    letter-spacing: 2px;
+    color: #a993ff;
+  }
+
+  .icons {
+    width: 50%;
+    min-width: 180px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .copany_card a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.4em;
+  }
+
+  .copany_card:hover {
+    background: linear-gradient(to right, #485491, #356f7d);
+    color: #ffffff;
+  }
+
+  .copany_card:hover .img-container {
+    transform: scale(1.3);
+  }
+
+
+  @media screen and (min-width: 992px) {
+
+    .copany_card {
+      padding: 5em 1em;
+    }
+
+    .column {
+      flex: 0 0 33.33%;
+      max-width: 25%;
+      padding: 0 1em;
+    }
+  }
+</style>

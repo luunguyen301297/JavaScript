@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <%- include('./layout/head.ejs') -%>
+  </head>
+  <body>
+    <%- include('./layout/header.ejs') -%>
+
+    <div class="search_result">
+      <h3>Search results for keyword: "<%= search %>"</h3>
+      <p>Show <b>1-<%= pageLimit %></b> of total <b><%= totalProducts %></b> results</p>
+
+      <% for (let [index, p] of product.entries()) {%>
+      <div class="result-wrapper">
+        <div class="result-content">
+          <a href="/<%= p.slug %>"><%= p.name %></a>
+          <p><%= p.content %></p>
+        </div>
+      </div>
+      <% } %>
+    </div>
+
+    <div class="">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item <%= currentPage === 1 ? 'disabled ' : ''%>">
+            <a class="page-link" id="prev" href="/tim-kiem/?page=<%=currentPage > 1 ? currentPage - 1 : 1 %>">Prev</a>
+          </li>
+
+          <% for(i = 1; i <= totalPage; i++) { %>
+          <li class="page-item <%= currentPage === i ? 'active' : ''%>">
+            <a class="page-link" id="next" href="/tim-kiem/?page=<%=i%>"><%= i%></a>
+          </li>
+          <% } %>
+
+          <li class="page-item <%= currentPage === totalPage ? 'disabled ' : ''%>">
+            <a class="page-link" href="/tim-kiem/?page=<%=currentPage < totalPage ? currentPage + 1 : totalPage%>">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <%- include ('./layout/footer.ejs') -%>
+
+    <style>
+      body {
+        background-color: #FAFAFA;
+      }
+      .search_result {
+        padding-top: 150px;
+        margin: 0 10% 50px 10%;
+      }
+
+      .search_result h3 {
+        color: rgba(78, 78, 78, 0.934);
+      }
+
+      .search_result p {
+        color: rgba(78, 78, 78, 0.934);
+        margin-bottom: 50px;
+        font-weight: 400;
+      }
+
+      .result-wrapper {
+        padding: 10px 20px;
+        border: 1px solid rgba(78, 78, 78, 0.318);
+        border-radius: 7px;
+        margin: 20px 0;
+        background-color: #fff;
+        box-shadow: 1px 1px 1px 1px rgba(178, 178, 178, 0.335);;
+      }
+
+      .result-content {
+        display: block;
+      }
+
+      .result-content a {
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #32578e;
+      }
+
+      .result-content a:hover {
+        color: #2CAAC1;
+      }
+
+      .result-content p {
+        font-size: 13px;
+        color: rgba(78, 78, 78, 0.934);
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+    </style>
+  </body>
+</html>

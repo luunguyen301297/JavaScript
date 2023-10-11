@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // string to array
+    let coursesStr = 'HTML & CSS, JavaScript, ReactJS';
+    strToArray = (str) => {
+      coursesStr = coursesStr.slice(0,4) + coursesStr.slice(5,6) + coursesStr.slice(7)
+      str = coursesStr.split(', ')
+      return str
+    }
+    console.log(strToArray(coursesStr))
+
+
+
+    // kiem tra gia tri so
+    isNumber = (value) => {
+      if (isNaN(value)) {
+        return false
+      } else {
+        if (Number.isFinite(value)) {
+            return true
+        } else {
+            return false
+        }
+      }
+    }
+    console.log(isNumber(999))
+
+
+
+    // array
+    joinWithCharacter = (array, charactor) => {
+      array = array.join(charactor);
+      return array
+    }
+
+    let cars = ['Honda', 'Mazda', 'Mercedes'];
+    let result = joinWithCharacter(cars, ' - ');
+
+    console.log(result);
+
+
+
+    // object contructor
+    function User(firstName, lastName, avatar) {
+      this.firstName = firstName
+      this.lastName = lastName
+      this.avatar = avatar
+      this.getName = function() {
+        return `${this.firstName} ${this.lastName}`
+      }
+    }
+
+    let user = new User('Luu', 'Nguyen', 'Avatar')
+    let user2 = new User('Quan', 'Nguyen', 'Avatar')
+
+    user.title = 'Hello'
+    user2.comment = 'Comment'
+
+    // object prototype
+    User.prototype.className = 'C1'
+    User.prototype.getClassName = function() {
+      return this.className
+    }
+
+    console.log(user)
+
+
+
+    // random with Math object
+    let arr = [
+      '10 coins',
+      '20 coins',
+      '30 coins',
+      '40 coins',
+      '50 coins'
+    ]
+
+    function getRandomItem(arr) {
+      let random = Math.floor(Math.random() * arr.length)
+      return arr[random]
+    }
+
+    console.log(`Random bonus: ${getRandomItem(arr)}`)
+
+
+
+
+    // ham tra ve tong cac phan tu cua mang
+    let orders = [
+      {
+        name: 'JS',
+        price: 50
+      },
+      {
+        name: 'Java',
+        price: 100
+      },
+      {
+        name: 'PHP',
+        price: 75
+      }
+    ]
+
+    function getTotal (orders) {
+      let total = 0
+      for (i = 0; i < orders.length; i++) {
+        total += orders[i].price
+      }
+      return total
+    }
+    console.log(`Total cost: ${getTotal(orders)} Coins`)
+
+
+
+    // for in (thuong su dung voi object)
+    function run(object) {
+      let arr = []
+      for (let key in object) {
+        arr.push(`Thuoc tinh ${key} co gia tri ${object[key]}`)
+      }
+      return arr
+    }
+    console.log(run({ name: 'Nguyen Van A', age: 16}))
+
+    // for of (thuong su dung voi string/arr)
+    let string = 'ABC'
+    for (let char of string) {
+      console.log(char)
+    }
+
+
+
+    // do while
+    let x = 0
+    let isSuccess = false
+    do {
+      x++
+      console.log(`Nap the lan ${x}`)
+
+      if (false) {
+        isSuccess = true
+      }
+    } while (!isSuccess && x <=2)
+
+
+
+    // filter
+    function getCourseCoins() {
+      let array = orders.filter(function(order){
+        return order.price > 50
+      })
+      return array
+    }
+
+    console.log(getCourseCoins(orders))
+
+
+    // reduce
+    function getTotal2 (orders) {
+      return orders.reduce((total, order) => total + order.price, 0)
+    }
+    console.log(`Total by reduce: ${getTotal2(orders)} Coins`)
+
+
+    function calculateRating(arr) {
+      var author = arr.filter(film => film.Director === 'Christopher Nolan')
+      var rate = author.reduce((total, film) => total + parseFloat(film.imdbRating), 0)
+      return rate / author.length
+    }
+
+    var arr2 = [
+      ['name', 'AAA'],
+      ['age', 18],
+    ]
+    function arrToObj(arr) {
+      return arr.reduce((obj, item) => {
+        obj[item[0]] = item[1]
+        return obj}, {})
+    }
+    console.log(arrToObj(arr))
+
+  </script>
+</body>
+</html>

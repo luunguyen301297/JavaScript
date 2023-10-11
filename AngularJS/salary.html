@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div ng-app="Demo">
+    <div ng-controller="filterCtrl">
+      Search: <input type="text" ng-model="searchText">
+      <div style="height: 15px;"></div>
+
+      <nav class="navbar navbar-default" style="background-color: rgb(19, 19, 19); font-weight: bold;">
+        <ul class="nav navbar-nav">
+          <li><a ng-model="changeTab" href="#">Info</a></li>
+          <li><a ng-model="changeTab" href="#">Salary</a></li>
+        </ul>
+      </nav>
+
+      <table class="table" ng-show="changeTab">
+        <tr style="background-color: bisque; font-weight: bold;">
+          <td>Name</td>
+          <td>Date of Birth</td>
+          <td>Gender</td>
+        </tr>
+        <tr ng-repeat="employee in employees | filter: searchText">
+          <td>{{employee.name}}</td>
+          <td>{{employee.birthDate | date:'dd/MM/yyyy'}}</td>
+          <td>{{employee.gender}}</td>
+        </tr>
+      </table>
+
+      <table class="table" ng-hide="changeTab">
+        <tr style="background-color: bisque; font-weight: bold;">
+          <td>Name</td>
+          <td>Salary</td>
+        </tr>
+        <tr ng-repeat="employee in employees | filter: searchText">
+          <td>{{employee.name}}</td>
+          <td>{{employee.salary | currency}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let myApp = angular.module('Demo', []);
+
+    myApp.controller('filterCtrl', ($scope) => {
+      $scope.employees = [
+        {name: 'Long', birthDate: new Date('10/20/1995'), gender: 'Male', salary: 18000},
+        {name: 'Trung', birthDate: new Date('11/25/1994'), gender: 'Male', salary: 13000},
+        {name: 'Vinh', birthDate: new Date('4/6/1991'), gender: 'Male', salary: 16000},
+        {name: 'Mai', birthDate: new Date('6/17/1999'), gender: 'Female', salary: 10000},
+        {name: 'Lan', birthDate: new Date('9/22/1998'), gender: 'Female', salary: 10000},
+        {name: 'Linh', birthDate: new Date('7/15/1992'), gender: 'Female', salary: 15000}
+      ];
+      $scope.searchText = '';
+      $scope.changeTab = true;
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <nav class="navbar navbar-default" style="background-color: rgb(19, 19, 19);">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">VNExpress</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">A</a></li>
+          <li><a href="#">B</a></li>
+          <li><a href="#">C</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div style="display: flex; height: 300px;" class="d-inline-flex p-3 bg-secondary text-white">
+    <div style="flex-grow: 1;" class="p-2 bg-warning"></div>
+
+    <div class="p-2 bg-light">
+
+      <div style="display: block; margin: 20px;" class="p-2 bg-light" id="question1">
+        <div style="height: 200px;">
+          <tr>
+            <h3>1/5. Địa phương nào từng được gọi là Thanh Hoa ngoại trấn?</h3>
+            <div style="height: 20px"></div>
+            <td>
+                <input type="radio" name="anwser" value="male">Thanh Hóa<br>
+                <input type="radio" name="anwser" value="female">Ninh Bình<br>
+                <input type="radio" name="anwser" value="female">Bình Định<br>
+            </td>
+          </tr><br>
+        </div>
+
+        <div id="correct-anwser-1" style="height: 40px;"></div>
+
+        <button onclick="nextButton()" type="button" class="btn btn-default">Next</button>
+      </div>
+
+      <div style="display: none; margin: 20px;" class="p-2 bg-light" id="question2">
+        <div style="height: 200px;">
+          <tr>
+            <h3>2/5. Tên Ninh Bình có nghĩa là gì?</h3>
+            <div style="height: 20px"></div>
+            <td>
+                <input type="radio" name="anwser" value="male">Thanh HóaVùng đất được dẹp yên, bình ổn<br>
+                <input type="radio" name="anwser" value="female">Vùng đất an toàn, bình yên<br>
+                <input type="radio" name="anwser" value="female">Vùng đất có mọi thứ<br>
+            </td>
+          </tr><br>
+        </div>
+
+        <div id="correct-anwser-2" style="height: 40px;"></div>
+
+        <button onclick="prevButton()" type="button" class="btn btn-default">Prev</button>
+      </div>
+    </div>
+    <div style="flex-grow: 1;" class="p-2 bg-warning"></div>
+  </div>
+</body>
+</html>
